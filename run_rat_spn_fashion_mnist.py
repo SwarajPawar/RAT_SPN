@@ -87,6 +87,8 @@ def run():
                 cmd += " --timeout_seconds {}".format(remaining_time)
                 cmd += " --split_depth {}".format(split_depth)
                 cmd += " --data_path data/fashion-mnist/"
+                cmd += " --data_set data/fashion_mnist/"
+                cmd += " --result_path data/fashion-mnist/"
 
                 for key in sorted(structure_config.keys()):
                     cmd += " --{} {}".format(key, structure_config[key])
