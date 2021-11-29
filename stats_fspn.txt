@@ -1,0 +1,1082 @@
+
+Discriminative Training of RAT-SPNs on fashion-mnist
+
+python train_rat_spn.py --store_best_valid_loss --store_best_valid_acc --num_epochs 15 --timeout_seconds 42899.99992585182 --split_depth 1 --data_path data/fashion-mnist/ --data_set fashion_mnist --result_path results/fashion-mnist/ --num_input_distributions 5 --num_recursive_splits 5 --num_sums 10 --dropout_rate_input 0.5 --dropout_rate_sums 0.5 --result_path quick_results/ratspn/mnist/split_depth_1__num_input_distributions_5__num_recursive_splits_5__num_sums_10__dropout_rate_input_0.5__dropout_rate_sums_0.5
+2021-11-27 21:03:22.357909: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2021-11-27 21:03:22.357965: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+WARNING:tensorflow:From /home/spawar/anaconda3/lib/python3.8/site-packages/tensorflow/python/compat/v2_compat.py:101: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+WARNING:tensorflow:From /home/spawar/Desktop/RAT_SPN/models/RatSpn.py:220: calling TruncatedNormal.__init__ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+2021-11-27 21:03:27.448500: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2021-11-27 21:03:27.448547: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
+2021-11-27 21:03:27.448577: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (makalu.cs.uga.edu): /proc/driver/nvidia/version does not exist
+2021-11-27 21:03:27.449072: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+GPU_fraction: 1.0
+batch_size: 100
+data_path: data/fashion-mnist/
+data_set: fashion_mnist
+discrete_leaves: False
+dropout_rate_input: 0.5
+dropout_rate_sums: 0.5
+gauss_isotropic: True
+gauss_max_var: 1.0
+gauss_min_var: 1.0
+kappa_discriminative: 1.0
+lambda_discriminative: 1.0
+learning_rate_decay: 0.97
+low_variance_threshold: 0.001
+model_description_file: None
+model_init_file: None
+no_save: False
+normalization: zmuv
+normalized_sums: True
+num_epochs: 15
+num_input_distributions: 5
+num_recursive_splits: 5
+num_states: 2
+num_sums: 10
+optimizer: adam
+provided_learning_rate: 0.001
+result_path: quick_results/ratspn/mnist/split_depth_1__num_input_distributions_5__num_recursive_splits_5__num_sums_10__dropout_rate_input_0.5__dropout_rate_sums_0.5
+split_depth: 1
+store_best_valid_acc: True
+store_best_valid_loss: True
+store_model_every_epochs: 5
+store_model_max: 1
+timeout_safety_seconds: 0.0
+timeout_seconds: 42899.99992585182
+zmuv_min_sigma: 0.001
+
+Layer: Gaussian
+   Num Tensors: 10
+   Num Nodes:   50
+Layer: product
+   Num Tensors: 5
+   Num Nodes:   125
+Layer: sum
+   Num Tensors: 1
+   Num Nodes:   10
+
+num params: 20626
+start training
+epoch: 0[1, 0.00100]   CE: 2.31286   nll: 0.68520   negmargin: 0.14138   loss: 2.31286   time: 0.55285
+epoch: 0[11, 0.00100]   CE: 2.20438   nll: 0.72336   negmargin: 0.07133   loss: 2.20438   time: 0.74506
+epoch: 0[21, 0.00100]   CE: 2.14383   nll: 0.72893   negmargin: 0.03564   loss: 2.14383   time: 0.93958
+epoch: 0[31, 0.00100]   CE: 2.06017   nll: 0.70640   negmargin: -0.01001   loss: 2.06017   time: 1.12984
+epoch: 0[41, 0.00100]   CE: 2.08376   nll: 0.69976   negmargin: 0.10359   loss: 2.08376   time: 1.31886
+epoch: 0[51, 0.00100]   CE: 1.93597   nll: 0.71980   negmargin: -0.02046   loss: 1.93597   time: 1.51270
+epoch: 0[61, 0.00100]   CE: 1.88418   nll: 0.68879   negmargin: -0.04306   loss: 1.88418   time: 1.70520
+epoch: 0[71, 0.00100]   CE: 1.89418   nll: 0.69598   negmargin: -0.03608   loss: 1.89418   time: 1.89760
+epoch: 0[81, 0.00100]   CE: 1.72463   nll: 0.71007   negmargin: -0.18023   loss: 1.72463   time: 2.09024
+epoch: 0[91, 0.00100]   CE: 1.72469   nll: 0.74853   negmargin: -0.16627   loss: 1.72469   time: 2.28039
+epoch: 0[101, 0.00100]   CE: 1.75487   nll: 0.66545   negmargin: -0.13839   loss: 1.75487   time: 2.47087
+epoch: 0[111, 0.00100]   CE: 1.71793   nll: 0.69702   negmargin: -0.16117   loss: 1.71793   time: 2.66130
+epoch: 0[121, 0.00100]   CE: 1.61350   nll: 0.73101   negmargin: -0.26929   loss: 1.61350   time: 2.84926
+epoch: 0[131, 0.00100]   CE: 1.70998   nll: 0.66482   negmargin: -0.10041   loss: 1.70998   time: 3.03870
+epoch: 0[141, 0.00100]   CE: 1.62734   nll: 0.72738   negmargin: -0.22048   loss: 1.62734   time: 3.23225
+epoch: 0[151, 0.00100]   CE: 1.67111   nll: 0.70854   negmargin: -0.12052   loss: 1.67111   time: 3.42187
+epoch: 0[161, 0.00100]   CE: 1.54441   nll: 0.71142   negmargin: -0.29083   loss: 1.54441   time: 3.61194
+epoch: 0[171, 0.00100]   CE: 1.55059   nll: 0.67292   negmargin: -0.28673   loss: 1.55059   time: 3.80276
+epoch: 0[181, 0.00100]   CE: 1.58512   nll: 0.69490   negmargin: -0.21650   loss: 1.58512   time: 3.99173
+epoch: 0[191, 0.00100]   CE: 1.48896   nll: 0.69306   negmargin: -0.32804   loss: 1.48896   time: 4.18032
+epoch: 0[201, 0.00100]   CE: 1.53143   nll: 0.70778   negmargin: -0.23198   loss: 1.53143   time: 4.36997
+epoch: 0[211, 0.00100]   CE: 1.47398   nll: 0.67678   negmargin: -0.34657   loss: 1.47398   time: 4.56249
+epoch: 0[221, 0.00100]   CE: 1.48233   nll: 0.70004   negmargin: -0.31189   loss: 1.48233   time: 4.75525
+epoch: 0[231, 0.00100]   CE: 1.51700   nll: 0.69434   negmargin: -0.24928   loss: 1.51700   time: 4.94707
+epoch: 0[241, 0.00100]   CE: 1.48290   nll: 0.72161   negmargin: -0.32018   loss: 1.48290   time: 5.13840
+epoch: 0[251, 0.00100]   CE: 1.44105   nll: 0.69500   negmargin: -0.37880   loss: 1.44105   time: 5.32805
+epoch: 0[261, 0.00100]   CE: 1.44747   nll: 0.69574   negmargin: -0.27964   loss: 1.44747   time: 5.52056
+epoch: 0[271, 0.00100]   CE: 1.46556   nll: 0.73380   negmargin: -0.28159   loss: 1.46556   time: 5.71113
+epoch: 0[281, 0.00100]   CE: 1.39144   nll: 0.69584   negmargin: -0.39293   loss: 1.39144   time: 5.90475
+epoch: 0[291, 0.00100]   CE: 1.35074   nll: 0.67917   negmargin: -0.41047   loss: 1.35074   time: 6.09706
+epoch: 0[301, 0.00100]   CE: 1.40911   nll: 0.70351   negmargin: -0.34229   loss: 1.40911   time: 6.28774
+epoch: 0[311, 0.00100]   CE: 1.35843   nll: 0.68277   negmargin: -0.37114   loss: 1.35843   time: 6.50330
+epoch: 0[321, 0.00100]   CE: 1.39203   nll: 0.71236   negmargin: -0.31567   loss: 1.39203   time: 6.69890
+epoch: 0[331, 0.00100]   CE: 1.32023   nll: 0.67884   negmargin: -0.39962   loss: 1.32023   time: 6.89427
+epoch: 0[341, 0.00100]   CE: 1.42129   nll: 0.69040   negmargin: -0.26816   loss: 1.42129   time: 7.08521
+epoch: 0[351, 0.00100]   CE: 1.38027   nll: 0.74309   negmargin: -0.30169   loss: 1.38027   time: 7.27870
+epoch: 0[361, 0.00100]   CE: 1.38155   nll: 0.71131   negmargin: -0.29236   loss: 1.38155   time: 7.47228
+epoch: 0[371, 0.00100]   CE: 1.34042   nll: 0.70549   negmargin: -0.34382   loss: 1.34042   time: 7.66567
+epoch: 0[381, 0.00100]   CE: 1.27189   nll: 0.68056   negmargin: -0.47894   loss: 1.27189   time: 7.85644
+epoch: 0[391, 0.00100]   CE: 1.29219   nll: 0.70569   negmargin: -0.37628   loss: 1.29219   time: 8.04728
+epoch: 0[401, 0.00100]   CE: 1.32969   nll: 0.69011   negmargin: -0.34774   loss: 1.32969   time: 8.24052
+epoch: 0[411, 0.00100]   CE: 1.27345   nll: 0.70434   negmargin: -0.33477   loss: 1.27345   time: 8.43557
+epoch: 0[421, 0.00100]   CE: 1.31832   nll: 0.73071   negmargin: -0.31557   loss: 1.31832   time: 8.62509
+epoch: 0[431, 0.00100]   CE: 1.32335   nll: 0.71263   negmargin: -0.27751   loss: 1.32335   time: 8.82721
+epoch: 0[441, 0.00100]   CE: 1.14810   nll: 0.68161   negmargin: -0.52238   loss: 1.14810   time: 9.02365
+epoch: 0[451, 0.00100]   CE: 1.22855   nll: 0.68182   negmargin: -0.40479   loss: 1.22855   time: 9.21390
+epoch: 0[461, 0.00100]   CE: 1.18019   nll: 0.67357   negmargin: -0.46630   loss: 1.18019   time: 9.40999
+epoch: 0[471, 0.00100]   CE: 1.18111   nll: 0.69117   negmargin: -0.43495   loss: 1.18111   time: 9.60099
+epoch: 0[481, 0.00100]   CE: 1.23749   nll: 0.69815   negmargin: -0.36639   loss: 1.23749   time: 9.79465
+epoch: 0[491, 0.00100]   CE: 1.23991   nll: 0.67881   negmargin: -0.37416   loss: 1.23991   time: 9.98973
+epoch: 0[501, 0.00100]   CE: 1.17541   nll: 0.69450   negmargin: -0.40657   loss: 1.17541   time: 10.18194
+epoch: 0[511, 0.00100]   CE: 1.15587   nll: 0.72122   negmargin: -0.46598   loss: 1.15587   time: 10.37463
+epoch: 0[521, 0.00100]   CE: 1.09758   nll: 0.70397   negmargin: -0.49843   loss: 1.09758   time: 10.57010
+epoch: 0[531, 0.00100]   CE: 1.12528   nll: 0.69299   negmargin: -0.46570   loss: 1.12528   time: 10.76206
+
+epoch 0
+   ###
+   ### accuracy on train set = 76.1537037037037   CE = 1.1056696873417606   LL: -1074.20382421875   negmargin: 0.4412268665455006
+   ###
+   ### accuracy on test set = 75.45   CE = 1.1191586395263673   LL: -1073.99248984375   negmargin: 0.4209967529296875
+   ###
+   ### accuracy on valid set = 76.33333333333333   CE = 1.1012830607096353   LL: -1072.4080533854167   margin: 0.4489877217610677
+   ###
+
+Better validation accuracy -> save model
+
+Better validation loss -> save model
+
+epoch: 1[1, 0.00100]   CE: 1.09849   nll: 0.67574   negmargin: -0.48075   loss: 1.09849   time: 0.03855
+epoch: 1[11, 0.00100]   CE: 1.26351   nll: 0.70183   negmargin: -0.23104   loss: 1.26351   time: 0.22979
+epoch: 1[21, 0.00100]   CE: 1.13410   nll: 0.73195   negmargin: -0.44241   loss: 1.13410   time: 0.42037
+epoch: 1[31, 0.00100]   CE: 1.14432   nll: 0.68737   negmargin: -0.40629   loss: 1.14432   time: 0.61036
+epoch: 1[41, 0.00100]   CE: 1.07499   nll: 0.68995   negmargin: -0.49545   loss: 1.07499   time: 0.79909
+epoch: 1[51, 0.00100]   CE: 1.00162   nll: 0.68015   negmargin: -0.55531   loss: 1.00162   time: 0.98617
+epoch: 1[61, 0.00100]   CE: 1.06151   nll: 0.67920   negmargin: -0.46077   loss: 1.06151   time: 1.18163
+epoch: 1[71, 0.00100]   CE: 0.98411   nll: 0.71970   negmargin: -0.59515   loss: 0.98411   time: 1.36939
+epoch: 1[81, 0.00100]   CE: 1.04198   nll: 0.67706   negmargin: -0.49156   loss: 1.04198   time: 1.56228WARNING:tensorflow:From /home/spawar/anaconda3/lib/python3.8/site-packages/tensorflow/python/training/saver.py:969: remove_checkpoint (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to delete files with this prefix.
+
+epoch: 1[91, 0.00100]   CE: 1.17520   nll: 0.67586   negmargin: -0.29255   loss: 1.17520   time: 1.75619
+epoch: 1[101, 0.00100]   CE: 1.03790   nll: 0.67723   negmargin: -0.49626   loss: 1.03790   time: 1.95105
+epoch: 1[111, 0.00100]   CE: 1.02646   nll: 0.67763   negmargin: -0.48580   loss: 1.02646   time: 2.14127
+epoch: 1[121, 0.00100]   CE: 1.10159   nll: 0.68580   negmargin: -0.36786   loss: 1.10159   time: 2.33183
+epoch: 1[131, 0.00100]   CE: 1.06837   nll: 0.69471   negmargin: -0.39377   loss: 1.06837   time: 2.52281
+epoch: 1[141, 0.00100]   CE: 0.97090   nll: 0.69707   negmargin: -0.55977   loss: 0.97090   time: 2.71337
+epoch: 1[151, 0.00100]   CE: 1.03265   nll: 0.69017   negmargin: -0.43694   loss: 1.03265   time: 2.90532
+epoch: 1[161, 0.00100]   CE: 1.02520   nll: 0.73864   negmargin: -0.44585   loss: 1.02520   time: 3.09530
+epoch: 1[171, 0.00100]   CE: 1.12721   nll: 0.69033   negmargin: -0.27519   loss: 1.12721   time: 3.28364
+epoch: 1[181, 0.00100]   CE: 1.00728   nll: 0.65739   negmargin: -0.45446   loss: 1.00728   time: 3.47285
+epoch: 1[191, 0.00100]   CE: 1.01908   nll: 0.67797   negmargin: -0.44800   loss: 1.01908   time: 3.66266
+epoch: 1[201, 0.00100]   CE: 1.11456   nll: 0.68510   negmargin: -0.30072   loss: 1.11456   time: 3.85359
+epoch: 1[211, 0.00100]   CE: 0.96821   nll: 0.66498   negmargin: -0.47521   loss: 0.96821   time: 4.04296
+epoch: 1[221, 0.00100]   CE: 1.01475   nll: 0.68751   negmargin: -0.42556   loss: 1.01475   time: 4.23262
+epoch: 1[231, 0.00100]   CE: 0.88003   nll: 0.68842   negmargin: -0.60363   loss: 0.88003   time: 4.42406
+epoch: 1[241, 0.00100]   CE: 0.88714   nll: 0.68084   negmargin: -0.60140   loss: 0.88714   time: 4.61624
+epoch: 1[251, 0.00100]   CE: 0.90728   nll: 0.68504   negmargin: -0.56921   loss: 0.90728   time: 4.80678
+epoch: 1[261, 0.00100]   CE: 1.01895   nll: 0.69866   negmargin: -0.38961   loss: 1.01895   time: 4.99761
+epoch: 1[271, 0.00100]   CE: 0.94516   nll: 0.68418   negmargin: -0.46872   loss: 0.94516   time: 5.18468
+epoch: 1[281, 0.00100]   CE: 0.94985   nll: 0.71795   negmargin: -0.49820   loss: 0.94985   time: 5.37427
+epoch: 1[291, 0.00100]   CE: 0.96862   nll: 0.68896   negmargin: -0.43724   loss: 0.96862   time: 5.56527
+epoch: 1[301, 0.00100]   CE: 1.05036   nll: 0.68554   negmargin: -0.31856   loss: 1.05036   time: 5.75728
+epoch: 1[311, 0.00100]   CE: 0.83448   nll: 0.68864   negmargin: -0.59344   loss: 0.83448   time: 5.95170
+epoch: 1[321, 0.00100]   CE: 0.86522   nll: 0.71787   negmargin: -0.58153   loss: 0.86522   time: 6.14303
+epoch: 1[331, 0.00100]   CE: 1.07108   nll: 0.67735   negmargin: -0.26457   loss: 1.07108   time: 6.33662
+epoch: 1[341, 0.00100]   CE: 0.84815   nll: 0.68496   negmargin: -0.57798   loss: 0.84815   time: 6.52747
+epoch: 1[351, 0.00100]   CE: 0.86756   nll: 0.70622   negmargin: -0.54926   loss: 0.86756   time: 6.71610
+epoch: 1[361, 0.00100]   CE: 0.94881   nll: 0.72703   negmargin: -0.39594   loss: 0.94881   time: 6.90803
+epoch: 1[371, 0.00100]   CE: 0.89428   nll: 0.67968   negmargin: -0.49752   loss: 0.89428   time: 7.11045
+epoch: 1[381, 0.00100]   CE: 0.96322   nll: 0.69479   negmargin: -0.41543   loss: 0.96322   time: 7.30091
+epoch: 1[391, 0.00100]   CE: 0.87041   nll: 0.70581   negmargin: -0.52956   loss: 0.87041   time: 7.49353
+epoch: 1[401, 0.00100]   CE: 0.84335   nll: 0.67891   negmargin: -0.54724   loss: 0.84335   time: 7.68331
+epoch: 1[411, 0.00100]   CE: 0.86189   nll: 0.72072   negmargin: -0.47473   loss: 0.86189   time: 7.87280
+epoch: 1[421, 0.00100]   CE: 0.93476   nll: 0.66992   negmargin: -0.40092   loss: 0.93476   time: 8.06605
+epoch: 1[431, 0.00100]   CE: 0.87478   nll: 0.70645   negmargin: -0.52425   loss: 0.87478   time: 8.25900
+epoch: 1[441, 0.00100]   CE: 0.93211   nll: 0.70856   negmargin: -0.39447   loss: 0.93211   time: 8.45692
+epoch: 1[451, 0.00100]   CE: 0.93940   nll: 0.69258   negmargin: -0.38050   loss: 0.93940   time: 8.64607
+epoch: 1[461, 0.00100]   CE: 0.85492   nll: 0.67541   negmargin: -0.50595   loss: 0.85492   time: 8.83816
+epoch: 1[471, 0.00100]   CE: 0.89046   nll: 0.67227   negmargin: -0.41770   loss: 0.89046   time: 9.03149
+epoch: 1[481, 0.00100]   CE: 0.79673   nll: 0.67251   negmargin: -0.55185   loss: 0.79673   time: 9.22440
+epoch: 1[491, 0.00100]   CE: 0.89029   nll: 0.66767   negmargin: -0.43184   loss: 0.89029   time: 9.41515
+epoch: 1[501, 0.00100]   CE: 0.83169   nll: 0.68564   negmargin: -0.50277   loss: 0.83169   time: 9.60543
+epoch: 1[511, 0.00100]   CE: 0.84600   nll: 0.69200   negmargin: -0.47281   loss: 0.84600   time: 9.79476
+epoch: 1[521, 0.00100]   CE: 0.84510   nll: 0.70991   negmargin: -0.46283   loss: 0.84510   time: 9.98909
+epoch: 1[531, 0.00100]   CE: 0.73327   nll: 0.68240   negmargin: -0.60684   loss: 0.73327   time: 10.17879
+
+epoch 1
+   ###
+   ### accuracy on train set = 79.52592592592593   CE = 0.8175238587414777   LL: -1071.7661767939815   negmargin: 0.48689321673357927
+   ###
+   ### accuracy on test set = 78.89   CE = 0.8350046611785888   LL: -1071.573559375   negmargin: 0.4640634094238281
+   ###
+   ### accuracy on valid set = 79.6   CE = 0.8119986788431803   LL: -1069.9443541666667   margin: 0.49494947306315107
+   ###
+
+Better validation accuracy -> save model
+
+Better validation loss -> save model
+
+epoch: 2[1, 0.00100]   CE: 0.86318   nll: 0.69529   negmargin: -0.44101   loss: 0.86318   time: 0.03804
+epoch: 2[11, 0.00100]   CE: 0.89474   nll: 0.68465   negmargin: -0.39443   loss: 0.89474   time: 0.22883
+epoch: 2[21, 0.00100]   CE: 0.87278   nll: 0.69088   negmargin: -0.45737   loss: 0.87278   time: 0.41866
+epoch: 2[31, 0.00100]   CE: 0.86975   nll: 0.67364   negmargin: -0.42349   loss: 0.86975   time: 0.60942
+epoch: 2[41, 0.00100]   CE: 0.78587   nll: 0.69994   negmargin: -0.56401   loss: 0.78587   time: 0.80297
+epoch: 2[51, 0.00100]   CE: 0.84926   nll: 0.69126   negmargin: -0.41497   loss: 0.84926   time: 0.99238
+epoch: 2[61, 0.00100]   CE: 0.96611   nll: 0.69779   negmargin: -0.24798   loss: 0.96611   time: 1.17988
+epoch: 2[71, 0.00100]   CE: 0.86247   nll: 0.69311   negmargin: -0.45630   loss: 0.86247   time: 1.36960
+epoch: 2[81, 0.00100]   CE: 0.85576   nll: 0.68974   negmargin: -0.41046   loss: 0.85576   time: 1.56241
+epoch: 2[91, 0.00100]   CE: 0.75411   nll: 0.70315   negmargin: -0.57498   loss: 0.75411   time: 1.75153
+epoch: 2[101, 0.00100]   CE: 0.84799   nll: 0.71316   negmargin: -0.49265   loss: 0.84799   time: 1.94410
+epoch: 2[111, 0.00100]   CE: 0.69930   nll: 0.71945   negmargin: -0.62999   loss: 0.69930   time: 2.13741
+epoch: 2[121, 0.00100]   CE: 0.74315   nll: 0.70657   negmargin: -0.58350   loss: 0.74315   time: 2.32753
+epoch: 2[131, 0.00100]   CE: 0.68517   nll: 0.66929   negmargin: -0.64032   loss: 0.68517   time: 2.52331
+epoch: 2[141, 0.00100]   CE: 0.78892   nll: 0.70402   negmargin: -0.46655   loss: 0.78892   time: 2.71892
+epoch: 2[151, 0.00100]   CE: 0.74026   nll: 0.69882   negmargin: -0.54375   loss: 0.74026   time: 2.91247
+epoch: 2[161, 0.00100]   CE: 0.65837   nll: 0.69023   negmargin: -0.64629   loss: 0.65837   time: 3.10799
+epoch: 2[171, 0.00100]   CE: 0.68419   nll: 0.67210   negmargin: -0.60270   loss: 0.68419   time: 3.29778
+epoch: 2[181, 0.00100]   CE: 0.66673   nll: 0.69524   negmargin: -0.62146   loss: 0.66673   time: 3.48904
+epoch: 2[191, 0.00100]   CE: 0.85535   nll: 0.67459   negmargin: -0.35387   loss: 0.85535   time: 3.68226
+epoch: 2[201, 0.00100]   CE: 0.70526   nll: 0.70111   negmargin: -0.61523   loss: 0.70526   time: 3.87513
+epoch: 2[211, 0.00100]   CE: 0.86006   nll: 0.67696   negmargin: -0.38622   loss: 0.86006   time: 4.06594
+epoch: 2[221, 0.00100]   CE: 0.83291   nll: 0.70083   negmargin: -0.42528   loss: 0.83291   time: 4.25422
+epoch: 2[231, 0.00100]   CE: 0.73870   nll: 0.72691   negmargin: -0.53838   loss: 0.73870   time: 4.44416
+epoch: 2[241, 0.00100]   CE: 0.73009   nll: 0.69503   negmargin: -0.56358   loss: 0.73009   time: 4.63408
+epoch: 2[251, 0.00100]   CE: 0.69433   nll: 0.71371   negmargin: -0.55963   loss: 0.69433   time: 4.82336
+epoch: 2[261, 0.00100]   CE: 0.75929   nll: 0.70517   negmargin: -0.52114   loss: 0.75929   time: 5.01766
+epoch: 2[271, 0.00100]   CE: 0.80597   nll: 0.68129   negmargin: -0.44452   loss: 0.80597   time: 5.20617
+epoch: 2[281, 0.00100]   CE: 0.90964   nll: 0.67388   negmargin: -0.26790   loss: 0.90964   time: 5.40173
+epoch: 2[291, 0.00100]   CE: 0.77845   nll: 0.69585   negmargin: -0.44805   loss: 0.77845   time: 5.59188
+epoch: 2[301, 0.00100]   CE: 0.65625   nll: 0.69680   negmargin: -0.61872   loss: 0.65625   time: 5.77853
+epoch: 2[311, 0.00100]   CE: 0.87597   nll: 0.67537   negmargin: -0.32418   loss: 0.87597   time: 5.97010
+epoch: 2[321, 0.00100]   CE: 0.73218   nll: 0.65672   negmargin: -0.49756   loss: 0.73218   time: 6.15640
+epoch: 2[331, 0.00100]   CE: 0.94492   nll: 0.77361   negmargin: -0.26595   loss: 0.94492   time: 6.34694
+epoch: 2[341, 0.00100]   CE: 0.78780   nll: 0.68742   negmargin: -0.42367   loss: 0.78780   time: 6.53572
+epoch: 2[351, 0.00100]   CE: 0.81011   nll: 0.68065   negmargin: -0.39840   loss: 0.81011   time: 6.72611
+epoch: 2[361, 0.00100]   CE: 0.75513   nll: 0.66541   negmargin: -0.47689   loss: 0.75513   time: 6.91616
+epoch: 2[371, 0.00100]   CE: 0.85370   nll: 0.68110   negmargin: -0.34214   loss: 0.85370   time: 7.10403
+epoch: 2[381, 0.00100]   CE: 0.77281   nll: 0.66843   negmargin: -0.43612   loss: 0.77281   time: 7.29610
+epoch: 2[391, 0.00100]   CE: 0.70974   nll: 0.68489   negmargin: -0.51953   loss: 0.70974   time: 7.48388
+epoch: 2[401, 0.00100]   CE: 0.80261   nll: 0.70624   negmargin: -0.40172   loss: 0.80261   time: 7.67669
+epoch: 2[411, 0.00100]   CE: 0.75722   nll: 0.68340   negmargin: -0.46047   loss: 0.75722   time: 7.86802
+epoch: 2[421, 0.00100]   CE: 0.69031   nll: 0.68996   negmargin: -0.55669   loss: 0.69031   time: 8.05949
+epoch: 2[431, 0.00100]   CE: 0.62892   nll: 0.70142   negmargin: -0.61811   loss: 0.62892   time: 8.25277
+epoch: 2[441, 0.00100]   CE: 0.63140   nll: 0.65663   negmargin: -0.61158   loss: 0.63140   time: 8.43850
+epoch: 2[451, 0.00100]   CE: 0.75064   nll: 0.67027   negmargin: -0.45102   loss: 0.75064   time: 8.63175
+epoch: 2[461, 0.00100]   CE: 0.75853   nll: 0.68001   negmargin: -0.45771   loss: 0.75853   time: 8.82301
+epoch: 2[471, 0.00100]   CE: 0.72373   nll: 0.70697   negmargin: -0.49474   loss: 0.72373   time: 9.01399
+epoch: 2[481, 0.00100]   CE: 0.72097   nll: 0.69754   negmargin: -0.48231   loss: 0.72097   time: 9.20484
+epoch: 2[491, 0.00100]   CE: 0.64024   nll: 0.68669   negmargin: -0.58321   loss: 0.64024   time: 9.39373
+epoch: 2[501, 0.00100]   CE: 0.69153   nll: 0.67083   negmargin: -0.53659   loss: 0.69153   time: 9.58994
+epoch: 2[511, 0.00100]   CE: 0.62854   nll: 0.70060   negmargin: -0.53958   loss: 0.62854   time: 9.78068
+epoch: 2[521, 0.00100]   CE: 0.78193   nll: 0.69845   negmargin: -0.39788   loss: 0.78193   time: 9.97060
+epoch: 2[531, 0.00100]   CE: 0.70577   nll: 0.67889   negmargin: -0.48084   loss: 0.70577   time: 10.17590
+
+epoch 2
+   ###
+   ### accuracy on train set = 80.79629629629629   CE = 0.6786339233539722   LL: -1071.0469153645834   negmargin: 0.4846718478732639
+   ###
+   ### accuracy on test set = 79.95   CE = 0.70343991355896   LL: -1070.8631   negmargin: 0.45243419799804685
+   ###
+   ### accuracy on valid set = 81.11666666666666   CE = 0.6658713289896647   LL: -1069.2129778645833   margin: 0.4999200541178385
+   ###
+
+Better validation accuracy -> save model
+
+Better validation loss -> save model
+
+epoch: 3[1, 0.00100]   CE: 0.80546   nll: 0.70347   negmargin: -0.37440   loss: 0.80546   time: 0.03686
+epoch: 3[11, 0.00100]   CE: 0.61753   nll: 0.69951   negmargin: -0.60132   loss: 0.61753   time: 0.22947
+epoch: 3[21, 0.00100]   CE: 0.68533   nll: 0.69505   negmargin: -0.51947   loss: 0.68533   time: 0.42246
+epoch: 3[31, 0.00100]   CE: 0.65193   nll: 0.67838   negmargin: -0.51447   loss: 0.65193   time: 0.61396
+epoch: 3[41, 0.00100]   CE: 0.65443   nll: 0.70408   negmargin: -0.53891   loss: 0.65443   time: 0.80691
+epoch: 3[51, 0.00100]   CE: 0.65737   nll: 0.68654   negmargin: -0.52630   loss: 0.65737   time: 1.00083
+epoch: 3[61, 0.00100]   CE: 0.65968   nll: 0.67642   negmargin: -0.54110   loss: 0.65968   time: 1.19194
+epoch: 3[71, 0.00100]   CE: 0.66268   nll: 0.66851   negmargin: -0.54720   loss: 0.66268   time: 1.38326
+epoch: 3[81, 0.00100]   CE: 0.66116   nll: 0.67755   negmargin: -0.57444   loss: 0.66116   time: 1.57365
+epoch: 3[91, 0.00100]   CE: 0.74774   nll: 0.67913   negmargin: -0.44691   loss: 0.74774   time: 1.76150
+epoch: 3[101, 0.00100]   CE: 0.62732   nll: 0.71044   negmargin: -0.54158   loss: 0.62732   time: 1.95325
+epoch: 3[111, 0.00100]   CE: 0.61868   nll: 0.67198   negmargin: -0.58110   loss: 0.61868   time: 2.14704
+epoch: 3[121, 0.00100]   CE: 0.72566   nll: 0.72585   negmargin: -0.47255   loss: 0.72566   time: 2.33848
+epoch: 3[131, 0.00100]   CE: 0.77267   nll: 0.67392   negmargin: -0.38812   loss: 0.77267   time: 2.52545
+epoch: 3[141, 0.00100]   CE: 0.65909   nll: 0.71009   negmargin: -0.49513   loss: 0.65909   time: 2.71957
+epoch: 3[151, 0.00100]   CE: 0.68707   nll: 0.73057   negmargin: -0.45715   loss: 0.68707   time: 2.91368
+epoch: 3[161, 0.00100]   CE: 0.71420   nll: 0.66596   negmargin: -0.44157   loss: 0.71420   time: 3.11032
+epoch: 3[171, 0.00100]   CE: 0.78445   nll: 0.69439   negmargin: -0.31437   loss: 0.78445   time: 3.30340
+epoch: 3[181, 0.00100]   CE: 0.57238   nll: 0.68097   negmargin: -0.63107   loss: 0.57238   time: 3.49215
+epoch: 3[191, 0.00100]   CE: 0.62119   nll: 0.71124   negmargin: -0.55112   loss: 0.62119   time: 3.68439
+epoch: 3[201, 0.00100]   CE: 0.69014   nll: 0.69893   negmargin: -0.41596   loss: 0.69014   time: 3.87202
+epoch: 3[211, 0.00100]   CE: 0.60104   nll: 0.70828   negmargin: -0.57177   loss: 0.60104   time: 4.06360
+epoch: 3[221, 0.00100]   CE: 0.61643   nll: 0.74347   negmargin: -0.56078   loss: 0.61643   time: 4.25372
+epoch: 3[231, 0.00100]   CE: 0.63574   nll: 0.68842   negmargin: -0.54096   loss: 0.63574   time: 4.44688
+epoch: 3[241, 0.00100]   CE: 0.62533   nll: 0.69942   negmargin: -0.53027   loss: 0.62533   time: 4.63459
+epoch: 3[251, 0.00100]   CE: 0.68289   nll: 0.68858   negmargin: -0.47482   loss: 0.68289   time: 4.82134
+epoch: 3[261, 0.00100]   CE: 0.57831   nll: 0.68886   negmargin: -0.52916   loss: 0.57831   time: 5.01329
+epoch: 3[271, 0.00100]   CE: 0.74435   nll: 0.69637   negmargin: -0.40161   loss: 0.74435   time: 5.20467
+epoch: 3[281, 0.00100]   CE: 0.68844   nll: 0.70222   negmargin: -0.45580   loss: 0.68844   time: 5.39613
+epoch: 3[291, 0.00100]   CE: 0.68777   nll: 0.69403   negmargin: -0.44222   loss: 0.68777   time: 5.58629
+epoch: 3[301, 0.00100]   CE: 0.59282   nll: 0.69205   negmargin: -0.55103   loss: 0.59282   time: 5.77654
+epoch: 3[311, 0.00100]   CE: 0.57859   nll: 0.67441   negmargin: -0.56671   loss: 0.57859   time: 5.96926
+epoch: 3[321, 0.00100]   CE: 0.68122   nll: 0.67596   negmargin: -0.45093   loss: 0.68122   time: 6.15865
+epoch: 3[331, 0.00100]   CE: 0.71003   nll: 0.70580   negmargin: -0.43740   loss: 0.71003   time: 6.34939
+epoch: 3[341, 0.00100]   CE: 0.64453   nll: 0.67872   negmargin: -0.51543   loss: 0.64453   time: 6.53958
+epoch: 3[351, 0.00100]   CE: 0.65939   nll: 0.72603   negmargin: -0.44385   loss: 0.65939   time: 6.73342
+epoch: 3[361, 0.00100]   CE: 0.64749   nll: 0.70681   negmargin: -0.47306   loss: 0.64749   time: 6.92039
+epoch: 3[371, 0.00100]   CE: 0.57855   nll: 0.68501   negmargin: -0.53619   loss: 0.57855   time: 7.11121
+epoch: 3[381, 0.00100]   CE: 0.73539   nll: 0.70953   negmargin: -0.35391   loss: 0.73539   time: 7.30004
+epoch: 3[391, 0.00100]   CE: 0.66175   nll: 0.70570   negmargin: -0.44631   loss: 0.66175   time: 7.48995
+epoch: 3[401, 0.00100]   CE: 0.53651   nll: 0.66142   negmargin: -0.63607   loss: 0.53651   time: 7.68302
+epoch: 3[411, 0.00100]   CE: 0.61506   nll: 0.68149   negmargin: -0.50397   loss: 0.61506   time: 7.87676
+epoch: 3[421, 0.00100]   CE: 0.61102   nll: 0.69400   negmargin: -0.50390   loss: 0.61102   time: 8.06814
+epoch: 3[431, 0.00100]   CE: 0.62397   nll: 0.67270   negmargin: -0.48113   loss: 0.62397   time: 8.26049
+epoch: 3[441, 0.00100]   CE: 0.61958   nll: 0.68692   negmargin: -0.52372   loss: 0.61958   time: 8.44890
+epoch: 3[451, 0.00100]   CE: 0.66986   nll: 0.68693   negmargin: -0.44786   loss: 0.66986   time: 8.63748
+epoch: 3[461, 0.00100]   CE: 0.58665   nll: 0.70329   negmargin: -0.52141   loss: 0.58665   time: 8.82721
+epoch: 3[471, 0.00100]   CE: 0.45916   nll: 0.70068   negmargin: -0.70593   loss: 0.45916   time: 9.01890
+epoch: 3[481, 0.00100]   CE: 0.62695   nll: 0.67958   negmargin: -0.51496   loss: 0.62695   time: 9.21224
+epoch: 3[491, 0.00100]   CE: 0.65289   nll: 0.69462   negmargin: -0.48305   loss: 0.65289   time: 9.40355
+epoch: 3[501, 0.00100]   CE: 0.55810   nll: 0.69962   negmargin: -0.60853   loss: 0.55810   time: 9.59394
+epoch: 3[511, 0.00100]   CE: 0.78630   nll: 0.67348   negmargin: -0.26021   loss: 0.78630   time: 9.78349
+epoch: 3[521, 0.00100]   CE: 0.68533   nll: 0.67906   negmargin: -0.41105   loss: 0.68533   time: 9.97346
+epoch: 3[531, 0.00100]   CE: 0.68367   nll: 0.72874   negmargin: -0.41332   loss: 0.68367   time: 10.16375
+
+epoch 3
+   ###
+   ### accuracy on train set = 81.55555555555556   CE = 0.6026645620840567   LL: -1070.7027837094906   negmargin: 0.49229292805989583
+   ###
+   ### accuracy on test set = 80.52   CE = 0.6302578010559082   LL: -1070.5346109375   negmargin: 0.45630201416015626
+   ###
+   ### accuracy on valid set = 81.96666666666667   CE = 0.591934310277303   LL: -1068.8775690104167   margin: 0.5055097045898438
+   ###
+
+Better validation accuracy -> save model
+
+Better validation loss -> save model
+
+epoch: 4[1, 0.00100]   CE: 0.62467   nll: 0.68662   negmargin: -0.49046   loss: 0.62467   time: 0.03754
+epoch: 4[11, 0.00100]   CE: 0.68227   nll: 0.69028   negmargin: -0.45246   loss: 0.68227   time: 0.23949
+epoch: 4[21, 0.00100]   CE: 0.52625   nll: 0.67318   negmargin: -0.61622   loss: 0.52625   time: 0.43230
+epoch: 4[31, 0.00100]   CE: 0.76165   nll: 0.68947   negmargin: -0.31971   loss: 0.76165   time: 0.62337
+epoch: 4[41, 0.00100]   CE: 0.69951   nll: 0.65597   negmargin: -0.34950   loss: 0.69951   time: 0.81806
+epoch: 4[51, 0.00100]   CE: 0.57928   nll: 0.66764   negmargin: -0.54866   loss: 0.57928   time: 1.00724
+epoch: 4[61, 0.00100]   CE: 0.61699   nll: 0.68977   negmargin: -0.51423   loss: 0.61699   time: 1.19921
+epoch: 4[71, 0.00100]   CE: 0.65821   nll: 0.71033   negmargin: -0.47188   loss: 0.65821   time: 1.39149
+epoch: 4[81, 0.00100]   CE: 0.56635   nll: 0.71651   negmargin: -0.57029   loss: 0.56635   time: 1.58495
+epoch: 4[91, 0.00100]   CE: 0.65054   nll: 0.69306   negmargin: -0.42618   loss: 0.65054   time: 1.77469
+epoch: 4[101, 0.00100]   CE: 0.61368   nll: 0.66997   negmargin: -0.51075   loss: 0.61368   time: 1.96815
+epoch: 4[111, 0.00100]   CE: 0.55008   nll: 0.65987   negmargin: -0.58165   loss: 0.55008   time: 2.15793
+epoch: 4[121, 0.00100]   CE: 0.68219   nll: 0.73966   negmargin: -0.39592   loss: 0.68219   time: 2.34639
+epoch: 4[131, 0.00100]   CE: 0.56521   nll: 0.69693   negmargin: -0.54242   loss: 0.56521   time: 2.53681
+epoch: 4[141, 0.00100]   CE: 0.65871   nll: 0.70345   negmargin: -0.41950   loss: 0.65871   time: 2.73103
+epoch: 4[151, 0.00100]   CE: 0.64452   nll: 0.66372   negmargin: -0.45288   loss: 0.64452   time: 2.92470
+epoch: 4[161, 0.00100]   CE: 0.68048   nll: 0.67492   negmargin: -0.39439   loss: 0.68048   time: 3.11575
+epoch: 4[171, 0.00100]   CE: 0.63496   nll: 0.70267   negmargin: -0.45963   loss: 0.63496   time: 3.30581
+epoch: 4[181, 0.00100]   CE: 0.69709   nll: 0.68476   negmargin: -0.35630   loss: 0.69709   time: 3.49479
+epoch: 4[191, 0.00100]   CE: 0.65537   nll: 0.67524   negmargin: -0.44142   loss: 0.65537   time: 3.68644
+epoch: 4[201, 0.00100]   CE: 0.73140   nll: 0.68666   negmargin: -0.35355   loss: 0.73140   time: 3.87514
+epoch: 4[211, 0.00100]   CE: 0.69992   nll: 0.69769   negmargin: -0.35543   loss: 0.69992   time: 4.06429
+epoch: 4[221, 0.00100]   CE: 0.64417   nll: 0.68729   negmargin: -0.47626   loss: 0.64417   time: 4.25550
+epoch: 4[231, 0.00100]   CE: 0.68084   nll: 0.69248   negmargin: -0.36320   loss: 0.68084   time: 4.44240
+epoch: 4[241, 0.00100]   CE: 0.65999   nll: 0.68899   negmargin: -0.45238   loss: 0.65999   time: 4.63484
+epoch: 4[251, 0.00100]   CE: 0.56143   nll: 0.71946   negmargin: -0.51617   loss: 0.56143   time: 4.82813
+epoch: 4[261, 0.00100]   CE: 0.66138   nll: 0.70271   negmargin: -0.42073   loss: 0.66138   time: 5.01878
+epoch: 4[271, 0.00100]   CE: 0.58429   nll: 0.67407   negmargin: -0.50346   loss: 0.58429   time: 5.21282
+epoch: 4[281, 0.00100]   CE: 0.71617   nll: 0.68086   negmargin: -0.33876   loss: 0.71617   time: 5.40333
+epoch: 4[291, 0.00100]   CE: 0.54124   nll: 0.67605   negmargin: -0.58993   loss: 0.54124   time: 5.59313
+epoch: 4[301, 0.00100]   CE: 0.76811   nll: 0.68257   negmargin: -0.24973   loss: 0.76811   time: 5.78454
+epoch: 4[311, 0.00100]   CE: 0.57159   nll: 0.68828   negmargin: -0.49329   loss: 0.57159   time: 5.97727
+epoch: 4[321, 0.00100]   CE: 0.44531   nll: 0.69262   negmargin: -0.71691   loss: 0.44531   time: 6.17023
+epoch: 4[331, 0.00100]   CE: 0.60218   nll: 0.70270   negmargin: -0.48762   loss: 0.60218   time: 6.36054
+epoch: 4[341, 0.00100]   CE: 0.49648   nll: 0.68512   negmargin: -0.63413   loss: 0.49648   time: 6.55124
+epoch: 4[351, 0.00100]   CE: 0.71701   nll: 0.69393   negmargin: -0.33640   loss: 0.71701   time: 6.74118
+epoch: 4[361, 0.00100]   CE: 0.61891   nll: 0.66659   negmargin: -0.42406   loss: 0.61891   time: 6.93209
+epoch: 4[371, 0.00100]   CE: 0.55827   nll: 0.76537   negmargin: -0.56266   loss: 0.55827   time: 7.12737
+epoch: 4[381, 0.00100]   CE: 0.63823   nll: 0.68134   negmargin: -0.42940   loss: 0.63823   time: 7.31629
+epoch: 4[391, 0.00100]   CE: 0.61061   nll: 0.69757   negmargin: -0.47116   loss: 0.61061   time: 7.50678
+epoch: 4[401, 0.00100]   CE: 0.48079   nll: 0.70195   negmargin: -0.64343   loss: 0.48079   time: 7.69927
+epoch: 4[411, 0.00100]   CE: 0.58007   nll: 0.71279   negmargin: -0.50496   loss: 0.58007   time: 7.89483
+epoch: 4[421, 0.00100]   CE: 0.66747   nll: 0.67403   negmargin: -0.34853   loss: 0.66747   time: 8.08804
+epoch: 4[431, 0.00100]   CE: 0.65078   nll: 0.71088   negmargin: -0.39884   loss: 0.65078   time: 8.27954
+epoch: 4[441, 0.00100]   CE: 0.76244   nll: 0.70674   negmargin: -0.27938   loss: 0.76244   time: 8.46775
+epoch: 4[451, 0.00100]   CE: 0.48525   nll: 0.67883   negmargin: -0.59722   loss: 0.48525   time: 8.66088
+epoch: 4[461, 0.00100]   CE: 0.60637   nll: 0.68360   negmargin: -0.45244   loss: 0.60637   time: 8.85180
+epoch: 4[471, 0.00100]   CE: 0.64471   nll: 0.67953   negmargin: -0.43932   loss: 0.64471   time: 9.04308
+epoch: 4[481, 0.00100]   CE: 0.83018   nll: 0.72848   negmargin: -0.18487   loss: 0.83018   time: 9.23547
+epoch: 4[491, 0.00100]   CE: 0.66353   nll: 0.70194   negmargin: -0.40901   loss: 0.66353   time: 9.42846
+epoch: 4[501, 0.00100]   CE: 0.57231   nll: 0.70724   negmargin: -0.51460   loss: 0.57231   time: 9.62000
+epoch: 4[511, 0.00100]   CE: 0.71363   nll: 0.72491   negmargin: -0.31615   loss: 0.71363   time: 9.81263
+epoch: 4[521, 0.00100]   CE: 0.62439   nll: 0.69614   negmargin: -0.47975   loss: 0.62439   time: 10.00287
+epoch: 4[531, 0.00100]   CE: 0.50875   nll: 0.70929   negmargin: -0.58336   loss: 0.50875   time: 10.19715
+
+epoch 4
+   ###
+   ### accuracy on train set = 81.79074074074074   CE = 0.5657621967880814   LL: -1070.7846682581019   negmargin: 0.48552578622323495
+   ###
+   ### accuracy on test set = 80.54   CE = 0.5987276863098144   LL: -1070.61246875   negmargin: 0.4430255554199219
+   ###
+   ### accuracy on valid set = 81.93333333333334   CE = 0.5586170533498128   LL: -1068.9917083333332   margin: 0.49389996337890624
+   ###
+
+Better validation loss -> save model
+
+epoch: 5[1, 0.00100]   CE: 0.58069   nll: 0.71059   negmargin: -0.50149   loss: 0.58069   time: 0.03879
+epoch: 5[11, 0.00100]   CE: 0.54909   nll: 0.65921   negmargin: -0.57407   loss: 0.54909   time: 0.23248
+epoch: 5[21, 0.00100]   CE: 0.51924   nll: 0.70866   negmargin: -0.57038   loss: 0.51924   time: 0.42308
+epoch: 5[31, 0.00100]   CE: 0.58219   nll: 0.68955   negmargin: -0.47686   loss: 0.58219   time: 0.61439
+epoch: 5[41, 0.00100]   CE: 0.66578   nll: 0.67258   negmargin: -0.36425   loss: 0.66578   time: 0.80624
+epoch: 5[51, 0.00100]   CE: 0.66920   nll: 0.65695   negmargin: -0.41467   loss: 0.66920   time: 0.99632
+epoch: 5[61, 0.00100]   CE: 0.65940   nll: 0.71691   negmargin: -0.41592   loss: 0.65940   time: 1.18634
+epoch: 5[71, 0.00100]   CE: 0.55114   nll: 0.64975   negmargin: -0.54689   loss: 0.55114   time: 1.37664
+epoch: 5[81, 0.00100]   CE: 0.65643   nll: 0.68913   negmargin: -0.38753   loss: 0.65643   time: 1.56435
+epoch: 5[91, 0.00100]   CE: 0.77972   nll: 0.69437   negmargin: -0.22517   loss: 0.77972   time: 1.75558
+epoch: 5[101, 0.00100]   CE: 0.65743   nll: 0.68910   negmargin: -0.40035   loss: 0.65743   time: 1.94659
+epoch: 5[111, 0.00100]   CE: 0.68889   nll: 0.69259   negmargin: -0.32913   loss: 0.68889   time: 2.13781
+epoch: 5[121, 0.00100]   CE: 0.63994   nll: 0.71954   negmargin: -0.38026   loss: 0.63994   time: 2.32587
+epoch: 5[131, 0.00100]   CE: 0.61257   nll: 0.69186   negmargin: -0.43122   loss: 0.61257   time: 2.51836
+epoch: 5[141, 0.00100]   CE: 0.50450   nll: 0.68131   negmargin: -0.61484   loss: 0.50450   time: 2.70688
+epoch: 5[151, 0.00100]   CE: 0.52052   nll: 0.68405   negmargin: -0.58247   loss: 0.52052   time: 2.89875
+epoch: 5[161, 0.00100]   CE: 0.55872   nll: 0.69438   negmargin: -0.50959   loss: 0.55872   time: 3.09018
+epoch: 5[171, 0.00100]   CE: 0.66043   nll: 0.69830   negmargin: -0.39692   loss: 0.66043   time: 3.27961
+epoch: 5[181, 0.00100]   CE: 0.71595   nll: 0.69985   negmargin: -0.34064   loss: 0.71595   time: 3.46814
+epoch: 5[191, 0.00100]   CE: 0.52948   nll: 0.70701   negmargin: -0.54867   loss: 0.52948   time: 3.65848
+epoch: 5[201, 0.00100]   CE: 0.69758   nll: 0.67492   negmargin: -0.35087   loss: 0.69758   time: 3.84797
+epoch: 5[211, 0.00100]   CE: 0.73075   nll: 0.70298   negmargin: -0.28314   loss: 0.73075   time: 4.03763
+epoch: 5[221, 0.00100]   CE: 0.74683   nll: 0.68495   negmargin: -0.25376   loss: 0.74683   time: 4.22857
+epoch: 5[231, 0.00100]   CE: 0.54425   nll: 0.72028   negmargin: -0.52082   loss: 0.54425   time: 4.42157
+epoch: 5[241, 0.00100]   CE: 0.52463   nll: 0.69038   negmargin: -0.54153   loss: 0.52463   time: 4.61277
+epoch: 5[251, 0.00100]   CE: 0.73620   nll: 0.67762   negmargin: -0.30261   loss: 0.73620   time: 4.80310
+epoch: 5[261, 0.00100]   CE: 0.60160   nll: 0.69236   negmargin: -0.48394   loss: 0.60160   time: 4.99446
+epoch: 5[271, 0.00100]   CE: 0.57879   nll: 0.71803   negmargin: -0.45317   loss: 0.57879   time: 5.18507
+epoch: 5[281, 0.00100]   CE: 0.68452   nll: 0.77753   negmargin: -0.35477   loss: 0.68452   time: 5.37500
+epoch: 5[291, 0.00100]   CE: 0.57872   nll: 0.70439   negmargin: -0.47867   loss: 0.57872   time: 5.56355
+epoch: 5[301, 0.00100]   CE: 0.55555   nll: 0.68325   negmargin: -0.52689   loss: 0.55555   time: 5.75293
+epoch: 5[311, 0.00100]   CE: 0.83881   nll: 0.66599   negmargin: -0.12807   loss: 0.83881   time: 5.94409
+epoch: 5[321, 0.00100]   CE: 0.65453   nll: 0.71004   negmargin: -0.36533   loss: 0.65453   time: 6.13648
+epoch: 5[331, 0.00100]   CE: 0.50812   nll: 0.68977   negmargin: -0.56094   loss: 0.50812   time: 6.33068
+epoch: 5[341, 0.00100]   CE: 0.44772   nll: 0.68302   negmargin: -0.63329   loss: 0.44772   time: 6.52045
+epoch: 5[351, 0.00100]   CE: 0.65930   nll: 0.67462   negmargin: -0.33906   loss: 0.65930   time: 6.70786
+epoch: 5[361, 0.00100]   CE: 0.52921   nll: 0.69391   negmargin: -0.54493   loss: 0.52921   time: 6.89568
+epoch: 5[371, 0.00100]   CE: 0.65579   nll: 0.70685   negmargin: -0.35209   loss: 0.65579   time: 7.08318
+epoch: 5[381, 0.00100]   CE: 0.53900   nll: 0.73680   negmargin: -0.55386   loss: 0.53900   time: 7.27507
+epoch: 5[391, 0.00100]   CE: 0.52113   nll: 0.67467   negmargin: -0.51717   loss: 0.52113   time: 7.46610
+epoch: 5[401, 0.00100]   CE: 0.68315   nll: 0.70432   negmargin: -0.36070   loss: 0.68315   time: 7.65816
+epoch: 5[411, 0.00100]   CE: 0.48955   nll: 0.68793   negmargin: -0.61223   loss: 0.48955   time: 7.84844
+epoch: 5[421, 0.00100]   CE: 0.57851   nll: 0.70390   negmargin: -0.48472   loss: 0.57851   time: 8.03915
+epoch: 5[431, 0.00100]   CE: 0.67543   nll: 0.69469   negmargin: -0.33957   loss: 0.67543   time: 8.22958
+epoch: 5[441, 0.00100]   CE: 0.60883   nll: 0.71953   negmargin: -0.46376   loss: 0.60883   time: 8.42172
+epoch: 5[451, 0.00100]   CE: 0.58540   nll: 0.71300   negmargin: -0.45586   loss: 0.58540   time: 8.61148
+epoch: 5[461, 0.00100]   CE: 0.54114   nll: 0.68697   negmargin: -0.50404   loss: 0.54114   time: 8.80427
+epoch: 5[471, 0.00100]   CE: 0.55648   nll: 0.69896   negmargin: -0.51286   loss: 0.55648   time: 8.99556
+epoch: 5[481, 0.00100]   CE: 0.53260   nll: 0.68705   negmargin: -0.53488   loss: 0.53260   time: 9.18582
+epoch: 5[491, 0.00100]   CE: 0.57463   nll: 0.66679   negmargin: -0.45236   loss: 0.57463   time: 9.37603
+epoch: 5[501, 0.00100]   CE: 0.53479   nll: 0.72041   negmargin: -0.52221   loss: 0.53479   time: 9.56638
+epoch: 5[511, 0.00100]   CE: 0.60663   nll: 0.68794   negmargin: -0.43717   loss: 0.60663   time: 9.75826
+epoch: 5[521, 0.00100]   CE: 0.50284   nll: 0.67146   negmargin: -0.57792   loss: 0.50284   time: 9.95053
+epoch: 5[531, 0.00100]   CE: 0.57687   nll: 0.72826   negmargin: -0.47264   loss: 0.57687   time: 10.14254
+
+epoch 5
+   ###
+   ### accuracy on train set = 82.07962962962964   CE = 0.5345451847005773   LL: -1070.8165306712963   negmargin: 0.49245083053023725
+   ###
+   ### accuracy on test set = 80.91   CE = 0.5690937965393067   LL: -1070.65164140625   negmargin: 0.4493296691894531
+   ###
+   ### accuracy on valid set = 82.21666666666667   CE = 0.530812396367391   LL: -1069.0205260416667   margin: 0.4954390360514323
+   ###
+
+Better validation accuracy -> save model
+
+Better validation loss -> save model
+
+epoch: 6[1, 0.00100]   CE: 0.42672   nll: 0.67150   negmargin: -0.66142   loss: 0.42672   time: 0.03667
+epoch: 6[11, 0.00100]   CE: 0.59297   nll: 0.76103   negmargin: -0.43719   loss: 0.59297   time: 0.22562
+epoch: 6[21, 0.00100]   CE: 0.44500   nll: 0.69254   negmargin: -0.65295   loss: 0.44500   time: 0.41767
+epoch: 6[31, 0.00100]   CE: 0.52066   nll: 0.70036   negmargin: -0.55798   loss: 0.52066   time: 0.60783
+epoch: 6[41, 0.00100]   CE: 0.44738   nll: 0.66304   negmargin: -0.64069   loss: 0.44738   time: 0.80189
+epoch: 6[51, 0.00100]   CE: 0.48991   nll: 0.65024   negmargin: -0.58137   loss: 0.48991   time: 0.99233
+epoch: 6[61, 0.00100]   CE: 0.54960   nll: 0.70586   negmargin: -0.50107   loss: 0.54960   time: 1.18293
+epoch: 6[71, 0.00100]   CE: 0.43879   nll: 0.71123   negmargin: -0.63390   loss: 0.43879   time: 1.37401
+epoch: 6[81, 0.00100]   CE: 0.48645   nll: 0.68861   negmargin: -0.59439   loss: 0.48645   time: 1.56255
+epoch: 6[91, 0.00100]   CE: 0.58098   nll: 0.68329   negmargin: -0.48570   loss: 0.58098   time: 1.75129
+epoch: 6[101, 0.00100]   CE: 0.64376   nll: 0.72701   negmargin: -0.40607   loss: 0.64376   time: 1.94401
+epoch: 6[111, 0.00100]   CE: 0.43296   nll: 0.67335   negmargin: -0.64405   loss: 0.43296   time: 2.13605
+epoch: 6[121, 0.00100]   CE: 0.51164   nll: 0.70646   negmargin: -0.54727   loss: 0.51164   time: 2.32778
+epoch: 6[131, 0.00100]   CE: 0.59342   nll: 0.68568   negmargin: -0.42319   loss: 0.59342   time: 2.51805
+epoch: 6[141, 0.00100]   CE: 0.55399   nll: 0.70180   negmargin: -0.49103   loss: 0.55399   time: 2.71171
+epoch: 6[151, 0.00100]   CE: 0.57299   nll: 0.70145   negmargin: -0.47361   loss: 0.57299   time: 2.89714
+epoch: 6[161, 0.00100]   CE: 0.66320   nll: 0.66555   negmargin: -0.36716   loss: 0.66320   time: 3.09007
+epoch: 6[171, 0.00100]   CE: 0.53032   nll: 0.72439   negmargin: -0.50256   loss: 0.53032   time: 3.28271
+epoch: 6[181, 0.00100]   CE: 0.67508   nll: 0.68478   negmargin: -0.32091   loss: 0.67508   time: 3.47335
+epoch: 6[191, 0.00100]   CE: 0.58302   nll: 0.69493   negmargin: -0.49271   loss: 0.58302   time: 3.66338
+epoch: 6[201, 0.00100]   CE: 0.47651   nll: 0.70682   negmargin: -0.56431   loss: 0.47651   time: 3.85468
+epoch: 6[211, 0.00100]   CE: 0.60713   nll: 0.65697   negmargin: -0.39716   loss: 0.60713   time: 4.04347
+epoch: 6[221, 0.00100]   CE: 0.57815   nll: 0.66994   negmargin: -0.43481   loss: 0.57815   time: 4.23193
+epoch: 6[231, 0.00100]   CE: 0.52393   nll: 0.66915   negmargin: -0.54130   loss: 0.52393   time: 4.42123
+epoch: 6[241, 0.00100]   CE: 0.50816   nll: 0.70057   negmargin: -0.56827   loss: 0.50816   time: 4.61121
+epoch: 6[251, 0.00100]   CE: 0.55825   nll: 0.65525   negmargin: -0.46854   loss: 0.55825   time: 4.80279
+epoch: 6[261, 0.00100]   CE: 0.61437   nll: 0.68390   negmargin: -0.39399   loss: 0.61437   time: 4.99265
+epoch: 6[271, 0.00100]   CE: 0.57033   nll: 0.71740   negmargin: -0.44690   loss: 0.57033   time: 5.18652
+epoch: 6[281, 0.00100]   CE: 0.63336   nll: 0.68672   negmargin: -0.36539   loss: 0.63336   time: 5.37915
+epoch: 6[291, 0.00100]   CE: 0.51923   nll: 0.68151   negmargin: -0.52799   loss: 0.51923   time: 5.57936
+epoch: 6[301, 0.00100]   CE: 0.51739   nll: 0.69231   negmargin: -0.51989   loss: 0.51739   time: 5.77382
+epoch: 6[311, 0.00100]   CE: 0.52313   nll: 0.67537   negmargin: -0.51787   loss: 0.52313   time: 5.96800
+epoch: 6[321, 0.00100]   CE: 0.61348   nll: 0.69301   negmargin: -0.40788   loss: 0.61348   time: 6.15811
+epoch: 6[331, 0.00100]   CE: 0.67048   nll: 0.68526   negmargin: -0.29165   loss: 0.67048   time: 6.34966
+epoch: 6[341, 0.00100]   CE: 0.52925   nll: 0.69648   negmargin: -0.50120   loss: 0.52925   time: 6.53841
+epoch: 6[351, 0.00100]   CE: 0.53243   nll: 0.68597   negmargin: -0.49285   loss: 0.53243   time: 6.72844
+epoch: 6[361, 0.00100]   CE: 0.67314   nll: 0.67201   negmargin: -0.34484   loss: 0.67314   time: 6.92128
+epoch: 6[371, 0.00100]   CE: 0.64162   nll: 0.70925   negmargin: -0.37478   loss: 0.64162   time: 7.11312
+epoch: 6[381, 0.00100]   CE: 0.61618   nll: 0.68369   negmargin: -0.43576   loss: 0.61618   time: 7.30408
+epoch: 6[391, 0.00100]   CE: 0.58799   nll: 0.67543   negmargin: -0.45316   loss: 0.58799   time: 7.49590
+epoch: 6[401, 0.00100]   CE: 0.38833   nll: 0.67402   negmargin: -0.68572   loss: 0.38833   time: 7.68585
+epoch: 6[411, 0.00100]   CE: 0.54004   nll: 0.69036   negmargin: -0.52006   loss: 0.54004   time: 7.87606
+epoch: 6[421, 0.00100]   CE: 0.56288   nll: 0.66247   negmargin: -0.45945   loss: 0.56288   time: 8.06998
+epoch: 6[431, 0.00100]   CE: 0.47507   nll: 0.68685   negmargin: -0.57404   loss: 0.47507   time: 8.25983
+epoch: 6[441, 0.00100]   CE: 0.59641   nll: 0.71681   negmargin: -0.43314   loss: 0.59641   time: 8.45419
+epoch: 6[451, 0.00100]   CE: 0.57552   nll: 0.68631   negmargin: -0.41280   loss: 0.57552   time: 8.64836
+epoch: 6[461, 0.00100]   CE: 0.49925   nll: 0.69514   negmargin: -0.54919   loss: 0.49925   time: 8.83777
+epoch: 6[471, 0.00100]   CE: 0.63852   nll: 0.70452   negmargin: -0.42945   loss: 0.63852   time: 9.03053
+epoch: 6[481, 0.00100]   CE: 0.55515   nll: 0.68228   negmargin: -0.49794   loss: 0.55515   time: 9.22193
+epoch: 6[491, 0.00100]   CE: 0.65234   nll: 0.71875   negmargin: -0.31489   loss: 0.65234   time: 9.41335
+epoch: 6[501, 0.00100]   CE: 0.69025   nll: 0.64289   negmargin: -0.32960   loss: 0.69025   time: 9.60543
+epoch: 6[511, 0.00100]   CE: 0.63774   nll: 0.68128   negmargin: -0.39429   loss: 0.63774   time: 9.79495
+epoch: 6[521, 0.00100]   CE: 0.53214   nll: 0.70065   negmargin: -0.51454   loss: 0.53214   time: 9.98766
+epoch: 6[531, 0.00100]   CE: 0.45247   nll: 0.68529   negmargin: -0.58262   loss: 0.45247   time: 10.17743
+
+epoch 6
+   ###
+   ### accuracy on train set = 82.25925925925925   CE = 0.5205676294609353   LL: -1070.5831344039352   negmargin: 0.48796766606083625
+   ###
+   ### accuracy on test set = 81.19   CE = 0.5571855428695679   LL: -1070.42186171875   negmargin: 0.4423997314453125
+   ###
+   ### accuracy on valid set = 82.21666666666667   CE = 0.5167579466501871   LL: -1068.8089388020833   margin: 0.4911869099934896
+   ###
+
+Better validation loss -> save model
+
+epoch: 7[1, 0.00100]   CE: 0.56063   nll: 0.66684   negmargin: -0.48254   loss: 0.56063   time: 0.03848
+epoch: 7[11, 0.00100]   CE: 0.67139   nll: 0.67645   negmargin: -0.32646   loss: 0.67139   time: 0.22800
+epoch: 7[21, 0.00100]   CE: 0.52541   nll: 0.69092   negmargin: -0.52696   loss: 0.52541   time: 0.41721
+epoch: 7[31, 0.00100]   CE: 0.68697   nll: 0.78004   negmargin: -0.31713   loss: 0.68697   time: 0.60611
+epoch: 7[41, 0.00100]   CE: 0.54574   nll: 0.69367   negmargin: -0.52390   loss: 0.54574   time: 0.79670
+epoch: 7[51, 0.00100]   CE: 0.46899   nll: 0.69942   negmargin: -0.57154   loss: 0.46899   time: 0.98741
+epoch: 7[61, 0.00100]   CE: 0.58333   nll: 0.70350   negmargin: -0.45975   loss: 0.58333   time: 1.17847
+epoch: 7[71, 0.00100]   CE: 0.60783   nll: 0.70485   negmargin: -0.40441   loss: 0.60783   time: 1.36772
+epoch: 7[81, 0.00100]   CE: 0.58851   nll: 0.69541   negmargin: -0.43826   loss: 0.58851   time: 1.55745
+epoch: 7[91, 0.00100]   CE: 0.61866   nll: 0.68990   negmargin: -0.38565   loss: 0.61866   time: 1.74943
+epoch: 7[101, 0.00100]   CE: 0.62182   nll: 0.69426   negmargin: -0.34246   loss: 0.62182   time: 1.93889
+epoch: 7[111, 0.00100]   CE: 0.55704   nll: 0.70628   negmargin: -0.47274   loss: 0.55704   time: 2.13088
+epoch: 7[121, 0.00100]   CE: 0.58235   nll: 0.68177   negmargin: -0.47019   loss: 0.58235   time: 2.32544
+epoch: 7[131, 0.00100]   CE: 0.58184   nll: 0.73920   negmargin: -0.45684   loss: 0.58184   time: 2.51572
+epoch: 7[141, 0.00100]   CE: 0.56462   nll: 0.66494   negmargin: -0.45786   loss: 0.56462   time: 2.70678
+epoch: 7[151, 0.00100]   CE: 0.61555   nll: 0.67292   negmargin: -0.37308   loss: 0.61555   time: 2.89906
+epoch: 7[161, 0.00100]   CE: 0.57607   nll: 0.67632   negmargin: -0.45646   loss: 0.57607   time: 3.09136
+epoch: 7[171, 0.00100]   CE: 0.65090   nll: 0.68946   negmargin: -0.39150   loss: 0.65090   time: 3.28396
+epoch: 7[181, 0.00100]   CE: 0.65102   nll: 0.68973   negmargin: -0.32267   loss: 0.65102   time: 3.48084
+epoch: 7[191, 0.00100]   CE: 0.61014   nll: 0.72782   negmargin: -0.43932   loss: 0.61014   time: 3.67120
+epoch: 7[201, 0.00100]   CE: 0.54517   nll: 0.68739   negmargin: -0.48772   loss: 0.54517   time: 3.86186
+epoch: 7[211, 0.00100]   CE: 0.52475   nll: 0.68406   negmargin: -0.47749   loss: 0.52475   time: 4.05384
+epoch: 7[221, 0.00100]   CE: 0.57660   nll: 0.66907   negmargin: -0.41914   loss: 0.57660   time: 4.24582
+epoch: 7[231, 0.00100]   CE: 0.46368   nll: 0.70991   negmargin: -0.59702   loss: 0.46368   time: 4.43787
+epoch: 7[241, 0.00100]   CE: 0.59662   nll: 0.69842   negmargin: -0.44831   loss: 0.59662   time: 4.62796
+epoch: 7[251, 0.00100]   CE: 0.65664   nll: 0.76495   negmargin: -0.37139   loss: 0.65664   time: 4.81785
+epoch: 7[261, 0.00100]   CE: 0.40951   nll: 0.72925   negmargin: -0.66837   loss: 0.40951   time: 5.00720
+epoch: 7[271, 0.00100]   CE: 0.39964   nll: 0.67559   negmargin: -0.68393   loss: 0.39964   time: 5.19645
+epoch: 7[281, 0.00100]   CE: 0.69298   nll: 0.66800   negmargin: -0.29469   loss: 0.69298   time: 5.39121
+epoch: 7[291, 0.00100]   CE: 0.47156   nll: 0.66015   negmargin: -0.57975   loss: 0.47156   time: 5.58236
+epoch: 7[301, 0.00100]   CE: 0.52833   nll: 0.72460   negmargin: -0.50332   loss: 0.52833   time: 5.77368
+epoch: 7[311, 0.00100]   CE: 0.55276   nll: 0.70092   negmargin: -0.47420   loss: 0.55276   time: 5.96339
+epoch: 7[321, 0.00100]   CE: 0.62371   nll: 0.68699   negmargin: -0.38118   loss: 0.62371   time: 6.15797
+epoch: 7[331, 0.00100]   CE: 0.56605   nll: 0.67169   negmargin: -0.43561   loss: 0.56605   time: 6.35118
+epoch: 7[341, 0.00100]   CE: 0.51529   nll: 0.70119   negmargin: -0.48490   loss: 0.51529   time: 6.54360
+epoch: 7[351, 0.00100]   CE: 0.52826   nll: 0.66167   negmargin: -0.47926   loss: 0.52826   time: 6.73444
+epoch: 7[361, 0.00100]   CE: 0.65545   nll: 0.67777   negmargin: -0.35715   loss: 0.65545   time: 6.92534
+epoch: 7[371, 0.00100]   CE: 0.64532   nll: 0.70242   negmargin: -0.35311   loss: 0.64532   time: 7.11782
+epoch: 7[381, 0.00100]   CE: 0.42696   nll: 0.70384   negmargin: -0.63907   loss: 0.42696   time: 7.31007
+epoch: 7[391, 0.00100]   CE: 0.50757   nll: 0.69554   negmargin: -0.51968   loss: 0.50757   time: 7.50206
+epoch: 7[401, 0.00100]   CE: 0.53999   nll: 0.66270   negmargin: -0.45261   loss: 0.53999   time: 7.69413
+epoch: 7[411, 0.00100]   CE: 0.56260   nll: 0.70189   negmargin: -0.45282   loss: 0.56260   time: 7.88591
+epoch: 7[421, 0.00100]   CE: 0.45073   nll: 0.67382   negmargin: -0.57984   loss: 0.45073   time: 8.07680
+epoch: 7[431, 0.00100]   CE: 0.43265   nll: 0.68631   negmargin: -0.61054   loss: 0.43265   time: 8.27040
+epoch: 7[441, 0.00100]   CE: 0.48749   nll: 0.68881   negmargin: -0.57216   loss: 0.48749   time: 8.46171
+epoch: 7[451, 0.00100]   CE: 0.48965   nll: 0.72388   negmargin: -0.54840   loss: 0.48965   time: 8.65315
+epoch: 7[461, 0.00100]   CE: 0.60053   nll: 0.67681   negmargin: -0.42835   loss: 0.60053   time: 8.84587
+epoch: 7[471, 0.00100]   CE: 0.56128   nll: 0.70342   negmargin: -0.44524   loss: 0.56128   time: 9.03871
+epoch: 7[481, 0.00100]   CE: 0.47719   nll: 0.68368   negmargin: -0.56615   loss: 0.47719   time: 9.22853
+epoch: 7[491, 0.00100]   CE: 0.58075   nll: 0.69090   negmargin: -0.43339   loss: 0.58075   time: 9.41814
+epoch: 7[501, 0.00100]   CE: 0.48669   nll: 0.66708   negmargin: -0.55347   loss: 0.48669   time: 9.60929
+epoch: 7[511, 0.00100]   CE: 0.57956   nll: 0.66109   negmargin: -0.44725   loss: 0.57956   time: 9.79955
+epoch: 7[521, 0.00100]   CE: 0.52341   nll: 0.67313   negmargin: -0.51939   loss: 0.52341   time: 9.98891
+epoch: 7[531, 0.00100]   CE: 0.64294   nll: 0.70232   negmargin: -0.31765   loss: 0.64294   time: 10.18295
+
+epoch 7
+   ###
+   ### accuracy on train set = 82.50185185185185   CE = 0.50735593590913   LL: -1070.9318083043981   negmargin: 0.4912467357494213
+   ###
+   ### accuracy on test set = 81.45   CE = 0.5490102228164673   LL: -1070.783278125   negmargin: 0.439756396484375
+   ###
+   ### accuracy on valid set = 82.33333333333333   CE = 0.5092334616978963   LL: -1069.17627734375   margin: 0.4869893188476562
+   ###
+
+Better validation accuracy -> save model
+
+Better validation loss -> save model
+
+epoch: 8[1, 0.00100]   CE: 0.46911   nll: 0.71215   negmargin: -0.58817   loss: 0.46911   time: 0.03647
+epoch: 8[11, 0.00100]   CE: 0.65240   nll: 0.66120   negmargin: -0.34339   loss: 0.65240   time: 0.22761
+epoch: 8[21, 0.00100]   CE: 0.41642   nll: 0.69176   negmargin: -0.67043   loss: 0.41642   time: 0.42058
+epoch: 8[31, 0.00100]   CE: 0.66609   nll: 0.72047   negmargin: -0.33634   loss: 0.66609   time: 0.61003
+epoch: 8[41, 0.00100]   CE: 0.49621   nll: 0.73432   negmargin: -0.51110   loss: 0.49621   time: 0.80054
+epoch: 8[51, 0.00100]   CE: 0.50778   nll: 0.70714   negmargin: -0.51157   loss: 0.50778   time: 0.99314
+epoch: 8[61, 0.00100]   CE: 0.57537   nll: 0.68107   negmargin: -0.45527   loss: 0.57537   time: 1.18388
+epoch: 8[71, 0.00100]   CE: 0.64933   nll: 0.68130   negmargin: -0.37653   loss: 0.64933   time: 1.37290
+epoch: 8[81, 0.00100]   CE: 0.53809   nll: 0.67892   negmargin: -0.48037   loss: 0.53809   time: 1.56799
+epoch: 8[91, 0.00100]   CE: 0.55047   nll: 0.68253   negmargin: -0.48940   loss: 0.55047   time: 1.75694
+epoch: 8[101, 0.00100]   CE: 0.61671   nll: 0.65194   negmargin: -0.36641   loss: 0.61671   time: 1.94876
+epoch: 8[111, 0.00100]   CE: 0.61132   nll: 0.67733   negmargin: -0.37237   loss: 0.61132   time: 2.14040
+epoch: 8[121, 0.00100]   CE: 0.53999   nll: 0.67976   negmargin: -0.47074   loss: 0.53999   time: 2.33266
+epoch: 8[131, 0.00100]   CE: 0.56267   nll: 0.68955   negmargin: -0.41796   loss: 0.56267   time: 2.52535
+epoch: 8[141, 0.00100]   CE: 0.58960   nll: 0.66628   negmargin: -0.40115   loss: 0.58960   time: 2.71583
+epoch: 8[151, 0.00100]   CE: 0.54380   nll: 0.69296   negmargin: -0.48279   loss: 0.54380   time: 2.90613
+epoch: 8[161, 0.00100]   CE: 0.48767   nll: 0.69759   negmargin: -0.55756   loss: 0.48767   time: 3.09394
+epoch: 8[171, 0.00100]   CE: 0.51623   nll: 0.69778   negmargin: -0.54983   loss: 0.51623   time: 3.28654
+epoch: 8[181, 0.00100]   CE: 0.51077   nll: 0.69546   negmargin: -0.50653   loss: 0.51077   time: 3.47929
+epoch: 8[191, 0.00100]   CE: 0.40909   nll: 0.68151   negmargin: -0.62112   loss: 0.40909   time: 3.66847
+epoch: 8[201, 0.00100]   CE: 0.58770   nll: 0.66099   negmargin: -0.41488   loss: 0.58770   time: 3.86174
+epoch: 8[211, 0.00100]   CE: 0.37374   nll: 0.67008   negmargin: -0.69419   loss: 0.37374   time: 4.05028
+epoch: 8[221, 0.00100]   CE: 0.48435   nll: 0.67790   negmargin: -0.56993   loss: 0.48435   time: 4.24646
+epoch: 8[231, 0.00100]   CE: 0.49299   nll: 0.70175   negmargin: -0.54844   loss: 0.49299   time: 4.43763
+epoch: 8[241, 0.00100]   CE: 0.54653   nll: 0.70240   negmargin: -0.42820   loss: 0.54653   time: 4.63294
+epoch: 8[251, 0.00100]   CE: 0.54442   nll: 0.69985   negmargin: -0.45978   loss: 0.54442   time: 4.82699
+epoch: 8[261, 0.00100]   CE: 0.46733   nll: 0.71352   negmargin: -0.54083   loss: 0.46733   time: 5.01882
+epoch: 8[271, 0.00100]   CE: 0.59523   nll: 0.70087   negmargin: -0.39934   loss: 0.59523   time: 5.20879
+epoch: 8[281, 0.00100]   CE: 0.60088   nll: 0.70489   negmargin: -0.42264   loss: 0.60088   time: 5.40510
+epoch: 8[291, 0.00100]   CE: 0.58933   nll: 0.70857   negmargin: -0.40628   loss: 0.58933   time: 5.59925
+epoch: 8[301, 0.00100]   CE: 0.62802   nll: 0.70131   negmargin: -0.36236   loss: 0.62802   time: 5.78908
+epoch: 8[311, 0.00100]   CE: 0.62944   nll: 0.68600   negmargin: -0.38335   loss: 0.62944   time: 5.98227
+epoch: 8[321, 0.00100]   CE: 0.48807   nll: 0.69146   negmargin: -0.52815   loss: 0.48807   time: 6.17511
+epoch: 8[331, 0.00100]   CE: 0.39810   nll: 0.70017   negmargin: -0.64253   loss: 0.39810   time: 6.36808
+epoch: 8[341, 0.00100]   CE: 0.62673   nll: 0.67013   negmargin: -0.34949   loss: 0.62673   time: 6.56018
+epoch: 8[351, 0.00100]   CE: 0.64494   nll: 0.67506   negmargin: -0.37696   loss: 0.64494   time: 6.75196
+epoch: 8[361, 0.00100]   CE: 0.42296   nll: 0.68908   negmargin: -0.61800   loss: 0.42296   time: 6.94339
+epoch: 8[371, 0.00100]   CE: 0.75661   nll: 0.67140   negmargin: -0.21563   loss: 0.75661   time: 7.13665
+epoch: 8[381, 0.00100]   CE: 0.39549   nll: 0.69247   negmargin: -0.65839   loss: 0.39549   time: 7.33161
+epoch: 8[391, 0.00100]   CE: 0.75805   nll: 0.68790   negmargin: -0.20122   loss: 0.75805   time: 7.52383
+epoch: 8[401, 0.00100]   CE: 0.44268   nll: 0.68281   negmargin: -0.59919   loss: 0.44268   time: 7.71290
+epoch: 8[411, 0.00100]   CE: 0.53441   nll: 0.69653   negmargin: -0.46376   loss: 0.53441   time: 7.90344
+epoch: 8[421, 0.00100]   CE: 0.57975   nll: 0.69097   negmargin: -0.41822   loss: 0.57975   time: 8.09625
+epoch: 8[431, 0.00100]   CE: 0.57216   nll: 0.71255   negmargin: -0.42624   loss: 0.57216   time: 8.28808
+epoch: 8[441, 0.00100]   CE: 0.47237   nll: 0.69477   negmargin: -0.57702   loss: 0.47237   time: 8.47859
+epoch: 8[451, 0.00100]   CE: 0.62013   nll: 0.67471   negmargin: -0.37840   loss: 0.62013   time: 8.66712
+epoch: 8[461, 0.00100]   CE: 0.52677   nll: 0.67931   negmargin: -0.48809   loss: 0.52677   time: 8.85730
+epoch: 8[471, 0.00100]   CE: 0.54917   nll: 0.68562   negmargin: -0.48663   loss: 0.54917   time: 9.04945
+epoch: 8[481, 0.00100]   CE: 0.62199   nll: 0.72956   negmargin: -0.38887   loss: 0.62199   time: 9.24360
+epoch: 8[491, 0.00100]   CE: 0.57408   nll: 0.68270   negmargin: -0.47355   loss: 0.57408   time: 9.43671
+epoch: 8[501, 0.00100]   CE: 0.53768   nll: 0.66658   negmargin: -0.45913   loss: 0.53768   time: 9.62859
+epoch: 8[511, 0.00100]   CE: 0.43166   nll: 0.72767   negmargin: -0.60815   loss: 0.43166   time: 9.81985
+epoch: 8[521, 0.00100]   CE: 0.50262   nll: 0.66460   negmargin: -0.53414   loss: 0.50262   time: 10.01554
+epoch: 8[531, 0.00100]   CE: 0.59207   nll: 0.66061   negmargin: -0.41899   loss: 0.59207   time: 10.20542
+
+epoch 8
+   ###
+   ### accuracy on train set = 82.56296296296296   CE = 0.4989897964972037   LL: -1070.9726005497685   negmargin: 0.4911052743417245
+   ###
+   ### accuracy on test set = 81.32   CE = 0.5413027214050293   LL: -1070.81797421875   negmargin: 0.43849100341796876
+   ###
+   ### accuracy on valid set = 82.31666666666666   CE = 0.5008404445648194   LL: -1069.21830859375   margin: 0.48729690551757815
+   ###
+
+Better validation loss -> save model
+
+epoch: 9[1, 0.00100]   CE: 0.61361   nll: 0.66605   negmargin: -0.34513   loss: 0.61361   time: 0.03750
+epoch: 9[11, 0.00100]   CE: 0.64675   nll: 0.65918   negmargin: -0.31025   loss: 0.64675   time: 0.22873
+epoch: 9[21, 0.00100]   CE: 0.57558   nll: 0.69384   negmargin: -0.43829   loss: 0.57558   time: 0.41851
+epoch: 9[31, 0.00100]   CE: 0.48772   nll: 0.67818   negmargin: -0.53618   loss: 0.48772   time: 0.61427
+epoch: 9[41, 0.00100]   CE: 0.61656   nll: 0.69334   negmargin: -0.37348   loss: 0.61656   time: 0.80544
+epoch: 9[51, 0.00100]   CE: 0.56198   nll: 0.66345   negmargin: -0.44410   loss: 0.56198   time: 0.99850
+epoch: 9[61, 0.00100]   CE: 0.39692   nll: 0.71075   negmargin: -0.66934   loss: 0.39692   time: 1.19250
+epoch: 9[71, 0.00100]   CE: 0.54025   nll: 0.68393   negmargin: -0.46889   loss: 0.54025   time: 1.38813
+epoch: 9[81, 0.00100]   CE: 0.52982   nll: 0.67407   negmargin: -0.48420   loss: 0.52982   time: 1.57523
+epoch: 9[91, 0.00100]   CE: 0.51026   nll: 0.70205   negmargin: -0.50806   loss: 0.51026   time: 1.76488
+epoch: 9[101, 0.00100]   CE: 0.63184   nll: 0.66602   negmargin: -0.36074   loss: 0.63184   time: 1.95810
+epoch: 9[111, 0.00100]   CE: 0.66276   nll: 0.68838   negmargin: -0.30013   loss: 0.66276   time: 2.15064
+epoch: 9[121, 0.00100]   CE: 0.54071   nll: 0.66457   negmargin: -0.50886   loss: 0.54071   time: 2.34472
+epoch: 9[131, 0.00100]   CE: 0.67593   nll: 0.68790   negmargin: -0.29140   loss: 0.67593   time: 2.53259
+epoch: 9[141, 0.00100]   CE: 0.61280   nll: 0.66205   negmargin: -0.38666   loss: 0.61280   time: 2.72444
+epoch: 9[151, 0.00100]   CE: 0.60776   nll: 0.66618   negmargin: -0.37593   loss: 0.60776   time: 2.91170
+epoch: 9[161, 0.00100]   CE: 0.45167   nll: 0.68742   negmargin: -0.56107   loss: 0.45167   time: 3.10554
+epoch: 9[171, 0.00100]   CE: 0.62200   nll: 0.68070   negmargin: -0.37519   loss: 0.62200   time: 3.29636
+epoch: 9[181, 0.00100]   CE: 0.43272   nll: 0.68104   negmargin: -0.64712   loss: 0.43272   time: 3.48774
+epoch: 9[191, 0.00100]   CE: 0.42524   nll: 0.68107   negmargin: -0.62924   loss: 0.42524   time: 3.68262
+epoch: 9[201, 0.00100]   CE: 0.51132   nll: 0.69358   negmargin: -0.49015   loss: 0.51132   time: 3.87308
+epoch: 9[211, 0.00100]   CE: 0.59676   nll: 0.69548   negmargin: -0.45231   loss: 0.59676   time: 4.06437
+epoch: 9[221, 0.00100]   CE: 0.40743   nll: 0.67705   negmargin: -0.63603   loss: 0.40743   time: 4.25852
+epoch: 9[231, 0.00100]   CE: 0.59242   nll: 0.66547   negmargin: -0.39348   loss: 0.59242   time: 4.46311
+epoch: 9[241, 0.00100]   CE: 0.58343   nll: 0.70445   negmargin: -0.38830   loss: 0.58343   time: 4.65605
+epoch: 9[251, 0.00100]   CE: 0.45696   nll: 0.69925   negmargin: -0.54798   loss: 0.45696   time: 4.84459
+epoch: 9[261, 0.00100]   CE: 0.57312   nll: 0.66442   negmargin: -0.42051   loss: 0.57312   time: 5.03621
+epoch: 9[271, 0.00100]   CE: 0.68655   nll: 0.67541   negmargin: -0.29525   loss: 0.68655   time: 5.22730
+epoch: 9[281, 0.00100]   CE: 0.69108   nll: 0.71259   negmargin: -0.30070   loss: 0.69108   time: 5.41733
+epoch: 9[291, 0.00100]   CE: 0.59259   nll: 0.69187   negmargin: -0.41204   loss: 0.59259   time: 5.60659
+epoch: 9[301, 0.00100]   CE: 0.43074   nll: 0.67861   negmargin: -0.61215   loss: 0.43074   time: 5.79729
+epoch: 9[311, 0.00100]   CE: 0.64669   nll: 0.67322   negmargin: -0.32604   loss: 0.64669   time: 5.98606
+epoch: 9[321, 0.00100]   CE: 0.55946   nll: 0.70507   negmargin: -0.42527   loss: 0.55946   time: 6.17804
+epoch: 9[331, 0.00100]   CE: 0.46976   nll: 0.69668   negmargin: -0.54836   loss: 0.46976   time: 6.36730
+epoch: 9[341, 0.00100]   CE: 0.50503   nll: 0.67262   negmargin: -0.48517   loss: 0.50503   time: 6.56278
+epoch: 9[351, 0.00100]   CE: 0.42675   nll: 0.69523   negmargin: -0.60737   loss: 0.42675   time: 6.75397
+epoch: 9[361, 0.00100]   CE: 0.47318   nll: 0.74260   negmargin: -0.51420   loss: 0.47318   time: 6.94589
+epoch: 9[371, 0.00100]   CE: 0.61904   nll: 0.72522   negmargin: -0.31825   loss: 0.61904   time: 7.13730
+epoch: 9[381, 0.00100]   CE: 0.39708   nll: 0.72053   negmargin: -0.66003   loss: 0.39708   time: 7.32939
+epoch: 9[391, 0.00100]   CE: 0.51370   nll: 0.68599   negmargin: -0.47375   loss: 0.51370   time: 7.51886
+epoch: 9[401, 0.00100]   CE: 0.57971   nll: 0.67016   negmargin: -0.40182   loss: 0.57971   time: 7.70830
+epoch: 9[411, 0.00100]   CE: 0.59675   nll: 0.67577   negmargin: -0.39611   loss: 0.59675   time: 7.89902
+epoch: 9[421, 0.00100]   CE: 0.51868   nll: 0.70247   negmargin: -0.51334   loss: 0.51868   time: 8.09371
+epoch: 9[431, 0.00100]   CE: 0.55172   nll: 0.70190   negmargin: -0.44083   loss: 0.55172   time: 8.28442
+epoch: 9[441, 0.00100]   CE: 0.58562   nll: 0.67780   negmargin: -0.36234   loss: 0.58562   time: 8.47720
+epoch: 9[451, 0.00100]   CE: 0.61569   nll: 0.67502   negmargin: -0.36234   loss: 0.61569   time: 8.66882
+epoch: 9[461, 0.00100]   CE: 0.39886   nll: 0.66045   negmargin: -0.61561   loss: 0.39886   time: 8.85957
+epoch: 9[471, 0.00100]   CE: 0.40831   nll: 0.67230   negmargin: -0.63450   loss: 0.40831   time: 9.04637
+epoch: 9[481, 0.00100]   CE: 0.61845   nll: 0.68725   negmargin: -0.37028   loss: 0.61845   time: 9.23656
+epoch: 9[491, 0.00100]   CE: 0.52087   nll: 0.75355   negmargin: -0.49387   loss: 0.52087   time: 9.42625
+epoch: 9[501, 0.00100]   CE: 0.44212   nll: 0.71301   negmargin: -0.58853   loss: 0.44212   time: 9.61585
+epoch: 9[511, 0.00100]   CE: 0.37395   nll: 0.71265   negmargin: -0.65071   loss: 0.37395   time: 9.80476
+epoch: 9[521, 0.00100]   CE: 0.32312   nll: 0.68056   negmargin: -0.76486   loss: 0.32312   time: 9.99322
+epoch: 9[531, 0.00100]   CE: 0.55127   nll: 0.69394   negmargin: -0.44943   loss: 0.55127   time: 10.18422
+
+epoch 9
+   ###
+   ### accuracy on train set = 83.47962962962963   CE = 0.4865871759697243   LL: -1071.1174076967593   negmargin: 0.5085060910825376
+   ###
+   ### accuracy on test set = 82.21   CE = 0.5294367343902587   LL: -1070.98728828125   negmargin: 0.4546576477050781
+   ###
+   ### accuracy on valid set = 83.33333333333333   CE = 0.4879011220932007   LL: -1069.37899609375   margin: 0.5054973449707031
+   ###
+
+Better validation accuracy -> save model
+
+Better validation loss -> save model
+
+epoch: 10[1, 0.00100]   CE: 0.49149   nll: 0.70494   negmargin: -0.52995   loss: 0.49149   time: 0.03722
+epoch: 10[11, 0.00100]   CE: 0.45074   nll: 0.68112   negmargin: -0.54696   loss: 0.45074   time: 0.23045
+epoch: 10[21, 0.00100]   CE: 0.55835   nll: 0.66956   negmargin: -0.44771   loss: 0.55835   time: 0.41958
+epoch: 10[31, 0.00100]   CE: 0.68372   nll: 0.71155   negmargin: -0.28290   loss: 0.68372   time: 0.61121
+epoch: 10[41, 0.00100]   CE: 0.54729   nll: 0.65617   negmargin: -0.43906   loss: 0.54729   time: 0.80201
+epoch: 10[51, 0.00100]   CE: 0.55618   nll: 0.67450   negmargin: -0.47508   loss: 0.55618   time: 0.99418
+epoch: 10[61, 0.00100]   CE: 0.46849   nll: 0.71037   negmargin: -0.54845   loss: 0.46849   time: 1.18387
+epoch: 10[71, 0.00100]   CE: 0.52784   nll: 0.68816   negmargin: -0.50792   loss: 0.52784   time: 1.37527
+epoch: 10[81, 0.00100]   CE: 0.61482   nll: 0.72605   negmargin: -0.38815   loss: 0.61482   time: 1.56566
+epoch: 10[91, 0.00100]   CE: 0.51520   nll: 0.68260   negmargin: -0.51046   loss: 0.51520   time: 1.75507
+epoch: 10[101, 0.00100]   CE: 0.37028   nll: 0.67939   negmargin: -0.70895   loss: 0.37028   time: 1.94613
+epoch: 10[111, 0.00100]   CE: 0.42546   nll: 0.67254   negmargin: -0.59412   loss: 0.42546   time: 2.13758
+epoch: 10[121, 0.00100]   CE: 0.34986   nll: 0.68763   negmargin: -0.72600   loss: 0.34986   time: 2.32779
+epoch: 10[131, 0.00100]   CE: 0.60212   nll: 0.73128   negmargin: -0.40531   loss: 0.60212   time: 2.52142
+epoch: 10[141, 0.00100]   CE: 0.53910   nll: 0.69431   negmargin: -0.45665   loss: 0.53910   time: 2.71701
+epoch: 10[151, 0.00100]   CE: 0.47249   nll: 0.72550   negmargin: -0.52628   loss: 0.47249   time: 2.90946
+epoch: 10[161, 0.00100]   CE: 0.42185   nll: 0.69209   negmargin: -0.63237   loss: 0.42185   time: 3.10047
+epoch: 10[171, 0.00100]   CE: 0.43184   nll: 0.74074   negmargin: -0.65277   loss: 0.43184   time: 3.29080
+epoch: 10[181, 0.00100]   CE: 0.64808   nll: 0.74882   negmargin: -0.35439   loss: 0.64808   time: 3.48612
+epoch: 10[191, 0.00100]   CE: 0.55293   nll: 0.68911   negmargin: -0.45090   loss: 0.55293   time: 3.67664
+epoch: 10[201, 0.00100]   CE: 0.60108   nll: 0.70242   negmargin: -0.41642   loss: 0.60108   time: 3.87024
+epoch: 10[211, 0.00100]   CE: 0.57417   nll: 0.66878   negmargin: -0.40213   loss: 0.57417   time: 4.05920
+epoch: 10[221, 0.00100]   CE: 0.55410   nll: 0.66801   negmargin: -0.49219   loss: 0.55410   time: 4.25114
+epoch: 10[231, 0.00100]   CE: 0.64707   nll: 0.67991   negmargin: -0.36696   loss: 0.64707   time: 4.44640
+epoch: 10[241, 0.00100]   CE: 0.51503   nll: 0.72568   negmargin: -0.52219   loss: 0.51503   time: 4.63825
+epoch: 10[251, 0.00100]   CE: 0.56778   nll: 0.71467   negmargin: -0.45858   loss: 0.56778   time: 4.82694
+epoch: 10[261, 0.00100]   CE: 0.55489   nll: 0.71374   negmargin: -0.46846   loss: 0.55489   time: 5.01853
+epoch: 10[271, 0.00100]   CE: 0.67221   nll: 0.67128   negmargin: -0.30836   loss: 0.67221   time: 5.21266
+epoch: 10[281, 0.00100]   CE: 0.43890   nll: 0.66860   negmargin: -0.58466   loss: 0.43890   time: 5.41115
+epoch: 10[291, 0.00100]   CE: 0.55072   nll: 0.69037   negmargin: -0.42835   loss: 0.55072   time: 5.60371
+epoch: 10[301, 0.00100]   CE: 0.56546   nll: 0.69645   negmargin: -0.46583   loss: 0.56546   time: 5.79881
+epoch: 10[311, 0.00100]   CE: 0.41257   nll: 0.68114   negmargin: -0.66453   loss: 0.41257   time: 5.98948
+epoch: 10[321, 0.00100]   CE: 0.64068   nll: 0.70998   negmargin: -0.34009   loss: 0.64068   time: 6.17908
+epoch: 10[331, 0.00100]   CE: 0.54583   nll: 0.65879   negmargin: -0.46373   loss: 0.54583   time: 6.36735
+epoch: 10[341, 0.00100]   CE: 0.52235   nll: 0.72390   negmargin: -0.51291   loss: 0.52235   time: 6.55834
+epoch: 10[351, 0.00100]   CE: 0.52520   nll: 0.69629   negmargin: -0.49344   loss: 0.52520   time: 6.74988
+epoch: 10[361, 0.00100]   CE: 0.42864   nll: 0.74473   negmargin: -0.64725   loss: 0.42864   time: 6.94124
+epoch: 10[371, 0.00100]   CE: 0.36803   nll: 0.72113   negmargin: -0.68192   loss: 0.36803   time: 7.13270
+epoch: 10[381, 0.00100]   CE: 0.40742   nll: 0.69091   negmargin: -0.65650   loss: 0.40742   time: 7.32199
+epoch: 10[391, 0.00100]   CE: 0.47658   nll: 0.67984   negmargin: -0.54403   loss: 0.47658   time: 7.51190
+epoch: 10[401, 0.00100]   CE: 0.38878   nll: 0.67412   negmargin: -0.69605   loss: 0.38878   time: 7.70149
+epoch: 10[411, 0.00100]   CE: 0.62045   nll: 0.70223   negmargin: -0.36795   loss: 0.62045   time: 7.88992
+epoch: 10[421, 0.00100]   CE: 0.61972   nll: 0.69735   negmargin: -0.35732   loss: 0.61972   time: 8.08083
+epoch: 10[431, 0.00100]   CE: 0.43429   nll: 0.68842   negmargin: -0.60188   loss: 0.43429   time: 8.27117
+epoch: 10[441, 0.00100]   CE: 0.54985   nll: 0.68599   negmargin: -0.46863   loss: 0.54985   time: 8.46214
+epoch: 10[451, 0.00100]   CE: 0.42578   nll: 0.70829   negmargin: -0.59137   loss: 0.42578   time: 8.65064
+epoch: 10[461, 0.00100]   CE: 0.67502   nll: 0.66569   negmargin: -0.35479   loss: 0.67502   time: 8.84330
+epoch: 10[471, 0.00100]   CE: 0.54139   nll: 0.68561   negmargin: -0.47387   loss: 0.54139   time: 9.03371
+epoch: 10[481, 0.00100]   CE: 0.40514   nll: 0.74282   negmargin: -0.62934   loss: 0.40514   time: 9.22185
+epoch: 10[491, 0.00100]   CE: 0.43244   nll: 0.72316   negmargin: -0.59732   loss: 0.43244   time: 9.41065
+epoch: 10[501, 0.00100]   CE: 0.61597   nll: 0.66394   negmargin: -0.41245   loss: 0.61597   time: 9.60404
+epoch: 10[511, 0.00100]   CE: 0.39986   nll: 0.69855   negmargin: -0.66455   loss: 0.39986   time: 9.79866
+epoch: 10[521, 0.00100]   CE: 0.43549   nll: 0.68267   negmargin: -0.63417   loss: 0.43549   time: 9.98958
+epoch: 10[531, 0.00100]   CE: 0.58338   nll: 0.68694   negmargin: -0.39899   loss: 0.58338   time: 10.17766
+
+epoch 10
+   ###
+   ### accuracy on train set = 85.41296296296296   CE = 0.4605706847508748   LL: -1071.4494136284723   negmargin: 0.5490334020543981
+   ###
+   ### accuracy on test set = 83.95   CE = 0.5071356853485107   LL: -1071.31493984375   negmargin: 0.4889041748046875
+   ###
+   ### accuracy on valid set = 85.88333333333334   CE = 0.4549006923039754   LL: -1069.6692161458334   margin: 0.5587911376953125
+   ###
+
+Better validation accuracy -> save model
+
+Better validation loss -> save model
+
+epoch: 11[1, 0.00100]   CE: 0.45544   nll: 0.68176   negmargin: -0.61054   loss: 0.45544   time: 0.03735
+epoch: 11[11, 0.00100]   CE: 0.40298   nll: 0.69880   negmargin: -0.66638   loss: 0.40298   time: 0.22834
+epoch: 11[21, 0.00100]   CE: 0.48938   nll: 0.66485   negmargin: -0.52451   loss: 0.48938   time: 0.41726
+epoch: 11[31, 0.00100]   CE: 0.58922   nll: 0.66483   negmargin: -0.43567   loss: 0.58922   time: 0.61169
+epoch: 11[41, 0.00100]   CE: 0.51832   nll: 0.71607   negmargin: -0.50349   loss: 0.51832   time: 0.79910
+epoch: 11[51, 0.00100]   CE: 0.47120   nll: 0.70202   negmargin: -0.56228   loss: 0.47120   time: 0.98732
+epoch: 11[61, 0.00100]   CE: 0.48814   nll: 0.68112   negmargin: -0.57120   loss: 0.48814   time: 1.18114
+epoch: 11[71, 0.00100]   CE: 0.46904   nll: 0.72554   negmargin: -0.56502   loss: 0.46904   time: 1.36940
+epoch: 11[81, 0.00100]   CE: 0.48870   nll: 0.69631   negmargin: -0.53459   loss: 0.48870   time: 1.56065
+epoch: 11[91, 0.00100]   CE: 0.43928   nll: 0.70268   negmargin: -0.59219   loss: 0.43928   time: 1.75287
+epoch: 11[101, 0.00100]   CE: 0.59619   nll: 0.73325   negmargin: -0.38801   loss: 0.59619   time: 1.94062
+epoch: 11[111, 0.00100]   CE: 0.30893   nll: 0.69477   negmargin: -0.75448   loss: 0.30893   time: 2.13064
+epoch: 11[121, 0.00100]   CE: 0.52151   nll: 0.68702   negmargin: -0.51992   loss: 0.52151   time: 2.32135
+epoch: 11[131, 0.00100]   CE: 0.58691   nll: 0.68079   negmargin: -0.42248   loss: 0.58691   time: 2.51103
+epoch: 11[141, 0.00100]   CE: 0.54745   nll: 0.67402   negmargin: -0.46181   loss: 0.54745   time: 2.70078
+epoch: 11[151, 0.00100]   CE: 0.47696   nll: 0.68158   negmargin: -0.53191   loss: 0.47696   time: 2.89446
+epoch: 11[161, 0.00100]   CE: 0.36949   nll: 0.68500   negmargin: -0.67282   loss: 0.36949   time: 3.08380
+epoch: 11[171, 0.00100]   CE: 0.57194   nll: 0.65532   negmargin: -0.46067   loss: 0.57194   time: 3.27758
+epoch: 11[181, 0.00100]   CE: 0.75145   nll: 0.73349   negmargin: -0.20901   loss: 0.75145   time: 3.46757
+epoch: 11[191, 0.00100]   CE: 0.42721   nll: 0.67863   negmargin: -0.60529   loss: 0.42721   time: 3.65745
+epoch: 11[201, 0.00100]   CE: 0.45544   nll: 0.72280   negmargin: -0.57349   loss: 0.45544   time: 3.84870
+epoch: 11[211, 0.00100]   CE: 0.41592   nll: 0.71996   negmargin: -0.63874   loss: 0.41592   time: 4.04202
+epoch: 11[221, 0.00100]   CE: 0.44978   nll: 0.69385   negmargin: -0.56408   loss: 0.44978   time: 4.23153
+epoch: 11[231, 0.00100]   CE: 0.40104   nll: 0.72858   negmargin: -0.63863   loss: 0.40104   time: 4.42136
+epoch: 11[241, 0.00100]   CE: 0.34075   nll: 0.73653   negmargin: -0.69889   loss: 0.34075   time: 4.61160
+epoch: 11[251, 0.00100]   CE: 0.40287   nll: 0.69538   negmargin: -0.65932   loss: 0.40287   time: 4.80270
+epoch: 11[261, 0.00100]   CE: 0.40680   nll: 0.67764   negmargin: -0.62913   loss: 0.40680   time: 4.99193
+epoch: 11[271, 0.00100]   CE: 0.57541   nll: 0.70559   negmargin: -0.42276   loss: 0.57541   time: 5.18138
+epoch: 11[281, 0.00100]   CE: 0.50251   nll: 0.68902   negmargin: -0.48875   loss: 0.50251   time: 5.37165
+epoch: 11[291, 0.00100]   CE: 0.47249   nll: 0.70015   negmargin: -0.55833   loss: 0.47249   time: 5.56544
+epoch: 11[301, 0.00100]   CE: 0.50504   nll: 0.68253   negmargin: -0.49710   loss: 0.50504   time: 5.75256
+epoch: 11[311, 0.00100]   CE: 0.47795   nll: 0.68309   negmargin: -0.53532   loss: 0.47795   time: 5.95622
+epoch: 11[321, 0.00100]   CE: 0.56628   nll: 0.73045   negmargin: -0.38880   loss: 0.56628   time: 6.15081
+epoch: 11[331, 0.00100]   CE: 0.60045   nll: 0.71403   negmargin: -0.39557   loss: 0.60045   time: 6.34177
+epoch: 11[341, 0.00100]   CE: 0.49392   nll: 0.70145   negmargin: -0.52158   loss: 0.49392   time: 6.53365
+epoch: 11[351, 0.00100]   CE: 0.56352   nll: 0.67710   negmargin: -0.45554   loss: 0.56352   time: 6.72501
+epoch: 11[361, 0.00100]   CE: 0.56616   nll: 0.72496   negmargin: -0.44669   loss: 0.56616   time: 6.91676
+epoch: 11[371, 0.00100]   CE: 0.49442   nll: 0.69060   negmargin: -0.54501   loss: 0.49442   time: 7.10732
+epoch: 11[381, 0.00100]   CE: 0.37919   nll: 0.67864   negmargin: -0.65958   loss: 0.37919   time: 7.29883
+epoch: 11[391, 0.00100]   CE: 0.58319   nll: 0.67752   negmargin: -0.40425   loss: 0.58319   time: 7.48840
+epoch: 11[401, 0.00100]   CE: 0.53058   nll: 0.67847   negmargin: -0.45515   loss: 0.53058   time: 7.67865
+epoch: 11[411, 0.00100]   CE: 0.50142   nll: 0.65898   negmargin: -0.52580   loss: 0.50142   time: 7.87034
+epoch: 11[421, 0.00100]   CE: 0.57010   nll: 0.70404   negmargin: -0.39245   loss: 0.57010   time: 8.06507
+epoch: 11[431, 0.00100]   CE: 0.47951   nll: 0.70784   negmargin: -0.53924   loss: 0.47951   time: 8.25703
+epoch: 11[441, 0.00100]   CE: 0.49240   nll: 0.69345   negmargin: -0.55070   loss: 0.49240   time: 8.44710
+epoch: 11[451, 0.00100]   CE: 0.44171   nll: 0.70591   negmargin: -0.56616   loss: 0.44171   time: 8.63904
+epoch: 11[461, 0.00100]   CE: 0.45200   nll: 0.73103   negmargin: -0.61168   loss: 0.45200   time: 8.82594
+epoch: 11[471, 0.00100]   CE: 0.40183   nll: 0.70287   negmargin: -0.59836   loss: 0.40183   time: 9.01401
+epoch: 11[481, 0.00100]   CE: 0.34870   nll: 0.70053   negmargin: -0.70742   loss: 0.34870   time: 9.20740
+epoch: 11[491, 0.00100]   CE: 0.40662   nll: 0.70467   negmargin: -0.64747   loss: 0.40662   time: 9.39910
+epoch: 11[501, 0.00100]   CE: 0.40314   nll: 0.68143   negmargin: -0.61620   loss: 0.40314   time: 9.58895
+epoch: 11[511, 0.00100]   CE: 0.67897   nll: 0.68716   negmargin: -0.27743   loss: 0.67897   time: 9.78002
+epoch: 11[521, 0.00100]   CE: 0.38126   nll: 0.73460   negmargin: -0.67983   loss: 0.38126   time: 9.96883
+epoch: 11[531, 0.00100]   CE: 0.70167   nll: 0.68993   negmargin: -0.29269   loss: 0.70167   time: 10.16187
+
+epoch 11
+   ###
+   ### accuracy on train set = 85.61111111111111   CE = 0.4521885892726757   LL: -1071.676548611111   negmargin: 0.5438433600531684
+   ###
+   ### accuracy on test set = 84.19   CE = 0.49936315097808837   LL: -1071.55442578125   negmargin: 0.4836103271484375
+   ###
+   ### accuracy on valid set = 86.16666666666667   CE = 0.4420869178771973   LL: -1069.8952395833333   margin: 0.5581778971354167
+   ###
+
+Better validation accuracy -> save model
+
+Better validation loss -> save model
+
+epoch: 12[1, 0.00100]   CE: 0.59128   nll: 0.68985   negmargin: -0.46568   loss: 0.59128   time: 0.03712
+epoch: 12[11, 0.00100]   CE: 0.43089   nll: 0.69963   negmargin: -0.57681   loss: 0.43089   time: 0.22724
+epoch: 12[21, 0.00100]   CE: 0.53448   nll: 0.69727   negmargin: -0.47455   loss: 0.53448   time: 0.42036
+epoch: 12[31, 0.00100]   CE: 0.53155   nll: 0.65530   negmargin: -0.49514   loss: 0.53155   time: 0.61033
+epoch: 12[41, 0.00100]   CE: 0.40509   nll: 0.68858   negmargin: -0.63425   loss: 0.40509   time: 0.80481
+epoch: 12[51, 0.00100]   CE: 0.51076   nll: 0.69556   negmargin: -0.50985   loss: 0.51076   time: 0.99762
+epoch: 12[61, 0.00100]   CE: 0.56127   nll: 0.75380   negmargin: -0.43529   loss: 0.56127   time: 1.18701
+epoch: 12[71, 0.00100]   CE: 0.55096   nll: 0.70836   negmargin: -0.45788   loss: 0.55096   time: 1.37672
+epoch: 12[81, 0.00100]   CE: 0.52501   nll: 0.67360   negmargin: -0.48289   loss: 0.52501   time: 1.56581
+epoch: 12[91, 0.00100]   CE: 0.70330   nll: 0.67497   negmargin: -0.26847   loss: 0.70330   time: 1.75814
+epoch: 12[101, 0.00100]   CE: 0.48196   nll: 0.70877   negmargin: -0.53714   loss: 0.48196   time: 1.94996
+epoch: 12[111, 0.00100]   CE: 0.39589   nll: 0.68015   negmargin: -0.65959   loss: 0.39589   time: 2.14826
+epoch: 12[121, 0.00100]   CE: 0.35217   nll: 0.70381   negmargin: -0.67992   loss: 0.35217   time: 2.33888
+epoch: 12[131, 0.00100]   CE: 0.47813   nll: 0.69279   negmargin: -0.53414   loss: 0.47813   time: 2.53036
+epoch: 12[141, 0.00100]   CE: 0.51396   nll: 0.71697   negmargin: -0.50805   loss: 0.51396   time: 2.71842
+epoch: 12[151, 0.00100]   CE: 0.54321   nll: 0.68836   negmargin: -0.46047   loss: 0.54321   time: 2.90667
+epoch: 12[161, 0.00100]   CE: 0.53480   nll: 0.68222   negmargin: -0.47450   loss: 0.53480   time: 3.09912
+epoch: 12[171, 0.00100]   CE: 0.42216   nll: 0.69379   negmargin: -0.57029   loss: 0.42216   time: 3.28785
+epoch: 12[181, 0.00100]   CE: 0.50924   nll: 0.74975   negmargin: -0.47064   loss: 0.50924   time: 3.47970
+epoch: 12[191, 0.00100]   CE: 0.47373   nll: 0.68406   negmargin: -0.52459   loss: 0.47373   time: 3.66787
+epoch: 12[201, 0.00100]   CE: 0.49551   nll: 0.69140   negmargin: -0.50410   loss: 0.49551   time: 3.85856
+epoch: 12[211, 0.00100]   CE: 0.47794   nll: 0.71836   negmargin: -0.51393   loss: 0.47794   time: 4.04909
+epoch: 12[221, 0.00100]   CE: 0.45965   nll: 0.69622   negmargin: -0.56779   loss: 0.45965   time: 4.23893
+epoch: 12[231, 0.00100]   CE: 0.56398   nll: 0.68745   negmargin: -0.43675   loss: 0.56398   time: 4.43085
+epoch: 12[241, 0.00100]   CE: 0.46577   nll: 0.68276   negmargin: -0.55985   loss: 0.46577   time: 4.62452
+epoch: 12[251, 0.00100]   CE: 0.40850   nll: 0.66441   negmargin: -0.64497   loss: 0.40850   time: 4.81761
+epoch: 12[261, 0.00100]   CE: 0.58968   nll: 0.71845   negmargin: -0.37779   loss: 0.58968   time: 5.01027
+epoch: 12[271, 0.00100]   CE: 0.40171   nll: 0.71624   negmargin: -0.66350   loss: 0.40171   time: 5.20091
+epoch: 12[281, 0.00100]   CE: 0.43938   nll: 0.68057   negmargin: -0.59010   loss: 0.43938   time: 5.39458
+epoch: 12[291, 0.00100]   CE: 0.43854   nll: 0.69664   negmargin: -0.57560   loss: 0.43854   time: 5.58506
+epoch: 12[301, 0.00100]   CE: 0.50959   nll: 0.69712   negmargin: -0.50280   loss: 0.50959   time: 5.77696
+epoch: 12[311, 0.00100]   CE: 0.54965   nll: 0.67711   negmargin: -0.47202   loss: 0.54965   time: 5.96702
+epoch: 12[321, 0.00100]   CE: 0.63356   nll: 0.67440   negmargin: -0.31993   loss: 0.63356   time: 6.16223
+epoch: 12[331, 0.00100]   CE: 0.50206   nll: 0.65401   negmargin: -0.53847   loss: 0.50206   time: 6.35496
+epoch: 12[341, 0.00100]   CE: 0.36785   nll: 0.71920   negmargin: -0.69527   loss: 0.36785   time: 6.54635
+epoch: 12[351, 0.00100]   CE: 0.49466   nll: 0.70067   negmargin: -0.48956   loss: 0.49466   time: 6.73835
+epoch: 12[361, 0.00100]   CE: 0.50973   nll: 0.67865   negmargin: -0.49829   loss: 0.50973   time: 6.92918
+epoch: 12[371, 0.00100]   CE: 0.45270   nll: 0.67823   negmargin: -0.58803   loss: 0.45270   time: 7.12235
+epoch: 12[381, 0.00100]   CE: 0.31711   nll: 0.67171   negmargin: -0.72360   loss: 0.31711   time: 7.31151
+epoch: 12[391, 0.00100]   CE: 0.50285   nll: 0.70491   negmargin: -0.50239   loss: 0.50285   time: 7.49932
+epoch: 12[401, 0.00100]   CE: 0.42023   nll: 0.67665   negmargin: -0.63970   loss: 0.42023   time: 7.69071
+epoch: 12[411, 0.00100]   CE: 0.44196   nll: 0.73433   negmargin: -0.56722   loss: 0.44196   time: 7.88320
+epoch: 12[421, 0.00100]   CE: 0.56973   nll: 0.67985   negmargin: -0.37264   loss: 0.56973   time: 8.07489
+epoch: 12[431, 0.00100]   CE: 0.45437   nll: 0.70473   negmargin: -0.55746   loss: 0.45437   time: 8.26611
+epoch: 12[441, 0.00100]   CE: 0.34462   nll: 0.68141   negmargin: -0.70179   loss: 0.34462   time: 8.45681
+epoch: 12[451, 0.00100]   CE: 0.43307   nll: 0.67723   negmargin: -0.59549   loss: 0.43307   time: 8.65165
+epoch: 12[461, 0.00100]   CE: 0.52254   nll: 0.68721   negmargin: -0.46345   loss: 0.52254   time: 8.83957
+epoch: 12[471, 0.00100]   CE: 0.44024   nll: 0.66503   negmargin: -0.59161   loss: 0.44024   time: 9.02854
+epoch: 12[481, 0.00100]   CE: 0.44234   nll: 0.71047   negmargin: -0.57272   loss: 0.44234   time: 9.21957
+epoch: 12[491, 0.00100]   CE: 0.56433   nll: 0.71122   negmargin: -0.41414   loss: 0.56433   time: 9.41058
+epoch: 12[501, 0.00100]   CE: 0.50337   nll: 0.68566   negmargin: -0.50424   loss: 0.50337   time: 9.60327
+epoch: 12[511, 0.00100]   CE: 0.38494   nll: 0.72040   negmargin: -0.62308   loss: 0.38494   time: 9.79312
+epoch: 12[521, 0.00100]   CE: 0.63887   nll: 0.68437   negmargin: -0.30395   loss: 0.63887   time: 9.98390
+epoch: 12[531, 0.00100]   CE: 0.46108   nll: 0.66386   negmargin: -0.54219   loss: 0.46108   time: 10.17607
+
+epoch 12
+   ###
+   ### accuracy on train set = 85.80925925925926   CE = 0.4412480700457538   LL: -1072.1804765625   negmargin: 0.5497695018627026
+   ###
+   ### accuracy on test set = 84.28   CE = 0.4893082246780395   LL: -1072.04815703125   negmargin: 0.4887853515625
+   ###
+   ### accuracy on valid set = 86.46666666666667   CE = 0.42776039950052896   LL: -1070.3911692708334   margin: 0.5683429158528646
+   ###
+
+Better validation accuracy -> save model
+
+Better validation loss -> save model
+
+epoch: 13[1, 0.00100]   CE: 0.39199   nll: 0.66628   negmargin: -0.63815   loss: 0.39199   time: 0.03729
+epoch: 13[11, 0.00100]   CE: 0.45226   nll: 0.77524   negmargin: -0.57476   loss: 0.45226   time: 0.22893
+epoch: 13[21, 0.00100]   CE: 0.51375   nll: 0.68305   negmargin: -0.47183   loss: 0.51375   time: 0.42139
+epoch: 13[31, 0.00100]   CE: 0.48120   nll: 0.69625   negmargin: -0.51891   loss: 0.48120   time: 0.61229
+epoch: 13[41, 0.00100]   CE: 0.51522   nll: 0.69641   negmargin: -0.43383   loss: 0.51522   time: 0.80484
+epoch: 13[51, 0.00100]   CE: 0.35617   nll: 0.67969   negmargin: -0.69089   loss: 0.35617   time: 0.99520
+epoch: 13[61, 0.00100]   CE: 0.54467   nll: 0.69368   negmargin: -0.44035   loss: 0.54467   time: 1.18343
+epoch: 13[71, 0.00100]   CE: 0.23300   nll: 0.66518   negmargin: -0.85381   loss: 0.23300   time: 1.37408
+epoch: 13[81, 0.00100]   CE: 0.39773   nll: 0.68170   negmargin: -0.64114   loss: 0.39773   time: 1.56872
+epoch: 13[91, 0.00100]   CE: 0.49833   nll: 0.69868   negmargin: -0.49095   loss: 0.49833   time: 1.76393
+epoch: 13[101, 0.00100]   CE: 0.65118   nll: 0.67820   negmargin: -0.31555   loss: 0.65118   time: 1.95979
+epoch: 13[111, 0.00100]   CE: 0.53968   nll: 0.66509   negmargin: -0.46129   loss: 0.53968   time: 2.14747
+epoch: 13[121, 0.00100]   CE: 0.54000   nll: 0.75697   negmargin: -0.42832   loss: 0.54000   time: 2.33819
+epoch: 13[131, 0.00100]   CE: 0.45447   nll: 0.71666   negmargin: -0.53726   loss: 0.45447   time: 2.52901
+epoch: 13[141, 0.00100]   CE: 0.29044   nll: 0.68398   negmargin: -0.75499   loss: 0.29044   time: 2.71895
+epoch: 13[151, 0.00100]   CE: 0.48311   nll: 0.71911   negmargin: -0.50767   loss: 0.48311   time: 2.90901
+epoch: 13[161, 0.00100]   CE: 0.46551   nll: 0.67676   negmargin: -0.54762   loss: 0.46551   time: 3.09825
+epoch: 13[171, 0.00100]   CE: 0.43085   nll: 0.69903   negmargin: -0.56049   loss: 0.43085   time: 3.28456
+epoch: 13[181, 0.00100]   CE: 0.61392   nll: 0.68693   negmargin: -0.37009   loss: 0.61392   time: 3.47159
+epoch: 13[191, 0.00100]   CE: 0.60927   nll: 0.67097   negmargin: -0.34896   loss: 0.60927   time: 3.66822
+epoch: 13[201, 0.00100]   CE: 0.45397   nll: 0.67156   negmargin: -0.58490   loss: 0.45397   time: 3.85790
+epoch: 13[211, 0.00100]   CE: 0.50231   nll: 0.68990   negmargin: -0.47793   loss: 0.50231   time: 4.04660
+epoch: 13[221, 0.00100]   CE: 0.42573   nll: 0.69473   negmargin: -0.57743   loss: 0.42573   time: 4.23500
+epoch: 13[231, 0.00100]   CE: 0.52749   nll: 0.71508   negmargin: -0.48847   loss: 0.52749   time: 4.42616
+epoch: 13[241, 0.00100]   CE: 0.45582   nll: 0.67377   negmargin: -0.58503   loss: 0.45582   time: 4.61614
+epoch: 13[251, 0.00100]   CE: 0.52241   nll: 0.69017   negmargin: -0.50932   loss: 0.52241   time: 4.80828
+epoch: 13[261, 0.00100]   CE: 0.54832   nll: 0.70471   negmargin: -0.48923   loss: 0.54832   time: 4.99959
+epoch: 13[271, 0.00100]   CE: 0.48694   nll: 0.67294   negmargin: -0.55572   loss: 0.48694   time: 5.19262
+epoch: 13[281, 0.00100]   CE: 0.55138   nll: 0.68044   negmargin: -0.42827   loss: 0.55138   time: 5.38799
+epoch: 13[291, 0.00100]   CE: 0.56368   nll: 0.72713   negmargin: -0.44703   loss: 0.56368   time: 5.57943
+epoch: 13[301, 0.00100]   CE: 0.40671   nll: 0.73787   negmargin: -0.62361   loss: 0.40671   time: 5.77012
+epoch: 13[311, 0.00100]   CE: 0.54955   nll: 0.71880   negmargin: -0.44409   loss: 0.54955   time: 5.96226
+epoch: 13[321, 0.00100]   CE: 0.54518   nll: 0.66212   negmargin: -0.44319   loss: 0.54518   time: 6.15349
+epoch: 13[331, 0.00100]   CE: 0.41666   nll: 0.68045   negmargin: -0.61695   loss: 0.41666   time: 6.34275
+epoch: 13[341, 0.00100]   CE: 0.46917   nll: 0.69117   negmargin: -0.54048   loss: 0.46917   time: 6.53661
+epoch: 13[351, 0.00100]   CE: 0.47192   nll: 0.65678   negmargin: -0.52751   loss: 0.47192   time: 6.72511
+epoch: 13[361, 0.00100]   CE: 0.42716   nll: 0.70125   negmargin: -0.64224   loss: 0.42716   time: 6.92772
+epoch: 13[371, 0.00100]   CE: 0.29834   nll: 0.67092   negmargin: -0.77399   loss: 0.29834   time: 7.11907
+epoch: 13[381, 0.00100]   CE: 0.44023   nll: 0.67373   negmargin: -0.59306   loss: 0.44023   time: 7.31124
+epoch: 13[391, 0.00100]   CE: 0.43764   nll: 0.76696   negmargin: -0.59683   loss: 0.43764   time: 7.49949
+epoch: 13[401, 0.00100]   CE: 0.59220   nll: 0.69466   negmargin: -0.39154   loss: 0.59220   time: 7.68862
+epoch: 13[411, 0.00100]   CE: 0.52077   nll: 0.69937   negmargin: -0.47977   loss: 0.52077   time: 7.87910
+epoch: 13[421, 0.00100]   CE: 0.34968   nll: 0.69619   negmargin: -0.72256   loss: 0.34968   time: 8.07344
+epoch: 13[431, 0.00100]   CE: 0.37000   nll: 0.69387   negmargin: -0.69138   loss: 0.37000   time: 8.26019
+epoch: 13[441, 0.00100]   CE: 0.50825   nll: 0.69131   negmargin: -0.48255   loss: 0.50825   time: 8.45197
+epoch: 13[451, 0.00100]   CE: 0.40899   nll: 0.71224   negmargin: -0.64130   loss: 0.40899   time: 8.64379
+epoch: 13[461, 0.00100]   CE: 0.30364   nll: 0.70795   negmargin: -0.76024   loss: 0.30364   time: 8.83577
+epoch: 13[471, 0.00100]   CE: 0.48204   nll: 0.69503   negmargin: -0.52441   loss: 0.48204   time: 9.02857
+epoch: 13[481, 0.00100]   CE: 0.48363   nll: 0.67789   negmargin: -0.53865   loss: 0.48363   time: 9.22267
+epoch: 13[491, 0.00100]   CE: 0.56909   nll: 0.69431   negmargin: -0.41899   loss: 0.56909   time: 9.41541
+epoch: 13[501, 0.00100]   CE: 0.61716   nll: 0.68259   negmargin: -0.34883   loss: 0.61716   time: 9.60384
+epoch: 13[511, 0.00100]   CE: 0.52945   nll: 0.68541   negmargin: -0.47456   loss: 0.52945   time: 9.79577
+epoch: 13[521, 0.00100]   CE: 0.34138   nll: 0.69930   negmargin: -0.68108   loss: 0.34138   time: 9.98693
+epoch: 13[531, 0.00100]   CE: 0.40287   nll: 0.70158   negmargin: -0.61800   loss: 0.40287   time: 10.17560
+
+epoch 13
+   ###
+   ### accuracy on train set = 85.78148148148148   CE = 0.4389396528491267   LL: -1072.351529658565   negmargin: 0.5483244719328704
+   ###
+   ### accuracy on test set = 84.27   CE = 0.4843830087661743   LL: -1072.2120640625   negmargin: 0.49042229614257815
+   ###
+   ### accuracy on valid set = 86.58333333333333   CE = 0.4239775438308716   LL: -1070.5506276041667   margin: 0.5683236796061198
+   ###
+
+Better validation accuracy -> save model
+
+Better validation loss -> save model
+
+epoch: 14[1, 0.00100]   CE: 0.47833   nll: 0.69341   negmargin: -0.51291   loss: 0.47833   time: 0.03731
+epoch: 14[11, 0.00100]   CE: 0.63320   nll: 0.71582   negmargin: -0.32813   loss: 0.63320   time: 0.22567
+epoch: 14[21, 0.00100]   CE: 0.45414   nll: 0.70072   negmargin: -0.54279   loss: 0.45414   time: 0.41390
+epoch: 14[31, 0.00100]   CE: 0.56335   nll: 0.70101   negmargin: -0.41377   loss: 0.56335   time: 0.61033
+epoch: 14[41, 0.00100]   CE: 0.51138   nll: 0.68082   negmargin: -0.50677   loss: 0.51138   time: 0.80570
+epoch: 14[51, 0.00100]   CE: 0.56642   nll: 0.72881   negmargin: -0.43997   loss: 0.56642   time: 0.99774
+epoch: 14[61, 0.00100]   CE: 0.51588   nll: 0.65946   negmargin: -0.46920   loss: 0.51588   time: 1.18845
+epoch: 14[71, 0.00100]   CE: 0.59172   nll: 0.70819   negmargin: -0.39841   loss: 0.59172   time: 1.38184
+epoch: 14[81, 0.00100]   CE: 0.46693   nll: 0.68959   negmargin: -0.57918   loss: 0.46693   time: 1.57556
+epoch: 14[91, 0.00100]   CE: 0.42657   nll: 0.70087   negmargin: -0.60655   loss: 0.42657   time: 1.76773
+epoch: 14[101, 0.00100]   CE: 0.59215   nll: 0.68752   negmargin: -0.35588   loss: 0.59215   time: 1.95838
+epoch: 14[111, 0.00100]   CE: 0.41032   nll: 0.67335   negmargin: -0.62317   loss: 0.41032   time: 2.14894
+epoch: 14[121, 0.00100]   CE: 0.55667   nll: 0.71273   negmargin: -0.43888   loss: 0.55667   time: 2.33991
+epoch: 14[131, 0.00100]   CE: 0.44742   nll: 0.68904   negmargin: -0.61088   loss: 0.44742   time: 2.53528
+epoch: 14[141, 0.00100]   CE: 0.51745   nll: 0.68354   negmargin: -0.48000   loss: 0.51745   time: 2.72673
+epoch: 14[151, 0.00100]   CE: 0.42361   nll: 0.72347   negmargin: -0.56574   loss: 0.42361   time: 2.92046
+epoch: 14[161, 0.00100]   CE: 0.55179   nll: 0.66901   negmargin: -0.41925   loss: 0.55179   time: 3.11452
+epoch: 14[171, 0.00100]   CE: 0.41428   nll: 0.67762   negmargin: -0.61341   loss: 0.41428   time: 3.30677
+epoch: 14[181, 0.00100]   CE: 0.43291   nll: 0.68219   negmargin: -0.56490   loss: 0.43291   time: 3.49814
+epoch: 14[191, 0.00100]   CE: 0.41117   nll: 0.68479   negmargin: -0.59910   loss: 0.41117   time: 3.69365
+epoch: 14[201, 0.00100]   CE: 0.54909   nll: 0.69857   negmargin: -0.43102   loss: 0.54909   time: 3.88377
+epoch: 14[211, 0.00100]   CE: 0.48395   nll: 0.71188   negmargin: -0.51645   loss: 0.48395   time: 4.07374
+epoch: 14[221, 0.00100]   CE: 0.46250   nll: 0.66799   negmargin: -0.55250   loss: 0.46250   time: 4.26517
+epoch: 14[231, 0.00100]   CE: 0.42447   nll: 0.67568   negmargin: -0.57787   loss: 0.42447   time: 4.45362
+epoch: 14[241, 0.00100]   CE: 0.43025   nll: 0.70372   negmargin: -0.56413   loss: 0.43025   time: 4.64114
+epoch: 14[251, 0.00100]   CE: 0.25846   nll: 0.68405   negmargin: -0.80606   loss: 0.25846   time: 4.83474
+epoch: 14[261, 0.00100]   CE: 0.42433   nll: 0.69176   negmargin: -0.60645   loss: 0.42433   time: 5.02723
+epoch: 14[271, 0.00100]   CE: 0.42982   nll: 0.73205   negmargin: -0.58038   loss: 0.42982   time: 5.21521
+epoch: 14[281, 0.00100]   CE: 0.56724   nll: 0.74820   negmargin: -0.43669   loss: 0.56724   time: 5.40741
+epoch: 14[291, 0.00100]   CE: 0.50101   nll: 0.70550   negmargin: -0.52455   loss: 0.50101   time: 5.60016
+epoch: 14[301, 0.00100]   CE: 0.40195   nll: 0.68928   negmargin: -0.59079   loss: 0.40195   time: 5.78978
+epoch: 14[311, 0.00100]   CE: 0.61919   nll: 0.67698   negmargin: -0.33513   loss: 0.61919   time: 5.98379
+epoch: 14[321, 0.00100]   CE: 0.57202   nll: 0.70784   negmargin: -0.38923   loss: 0.57202   time: 6.17382
+epoch: 14[331, 0.00100]   CE: 0.57444   nll: 0.71130   negmargin: -0.38799   loss: 0.57444   time: 6.36373
+epoch: 14[341, 0.00100]   CE: 0.44229   nll: 0.67972   negmargin: -0.56515   loss: 0.44229   time: 6.56119
+epoch: 14[351, 0.00100]   CE: 0.47815   nll: 0.69599   negmargin: -0.52490   loss: 0.47815   time: 6.75401
+epoch: 14[361, 0.00100]   CE: 0.44736   nll: 0.68936   negmargin: -0.55341   loss: 0.44736   time: 6.94345
+epoch: 14[371, 0.00100]   CE: 0.48727   nll: 0.71584   negmargin: -0.52041   loss: 0.48727   time: 7.13355
+epoch: 14[381, 0.00100]   CE: 0.58918   nll: 0.68664   negmargin: -0.37259   loss: 0.58918   time: 7.32378
+epoch: 14[391, 0.00100]   CE: 0.52830   nll: 0.66222   negmargin: -0.53035   loss: 0.52830   time: 7.51721
+epoch: 14[401, 0.00100]   CE: 0.53934   nll: 0.69528   negmargin: -0.42672   loss: 0.53934   time: 7.70731
+epoch: 14[411, 0.00100]   CE: 0.36079   nll: 0.77021   negmargin: -0.69478   loss: 0.36079   time: 7.89785
+epoch: 14[421, 0.00100]   CE: 0.45147   nll: 0.69146   negmargin: -0.56016   loss: 0.45147   time: 8.08796
+epoch: 14[431, 0.00100]   CE: 0.39665   nll: 0.72639   negmargin: -0.64079   loss: 0.39665   time: 8.28202
+epoch: 14[441, 0.00100]   CE: 0.41598   nll: 0.66925   negmargin: -0.59646   loss: 0.41598   time: 8.46992
+epoch: 14[451, 0.00100]   CE: 0.46337   nll: 0.68038   negmargin: -0.55847   loss: 0.46337   time: 8.65911
+epoch: 14[461, 0.00100]   CE: 0.34811   nll: 0.71420   negmargin: -0.72256   loss: 0.34811   time: 8.84908
+epoch: 14[471, 0.00100]   CE: 0.42843   nll: 0.69914   negmargin: -0.59328   loss: 0.42843   time: 9.04091
+epoch: 14[481, 0.00100]   CE: 0.47142   nll: 0.72147   negmargin: -0.55167   loss: 0.47142   time: 9.23176
+epoch: 14[491, 0.00100]   CE: 0.50800   nll: 0.68835   negmargin: -0.48997   loss: 0.50800   time: 9.42472
+epoch: 14[501, 0.00100]   CE: 0.40844   nll: 0.67120   negmargin: -0.64017   loss: 0.40844   time: 9.62373
+epoch: 14[511, 0.00100]   CE: 0.41785   nll: 0.72933   negmargin: -0.61593   loss: 0.41785   time: 9.81680
+epoch: 14[521, 0.00100]   CE: 0.47453   nll: 0.67480   negmargin: -0.54594   loss: 0.47453   time: 10.00883
+epoch: 14[531, 0.00100]   CE: 0.30488   nll: 0.69199   negmargin: -0.72263   loss: 0.30488   time: 10.20046
+
+epoch 14
+   ###
+   ### accuracy on train set = 85.97037037037038   CE = 0.4317147457687943   LL: -1072.413334056713   negmargin: 0.5538112657335069
+   ###
+   ### accuracy on test set = 84.63   CE = 0.4830903636932373   LL: -1072.28053125   negmargin: 0.4904971618652344
+   ###
+   ### accuracy on valid set = 86.7   CE = 0.42131184800465904   LL: -1070.6314401041666   margin: 0.5691577657063802
+   ###
+
+Better validation accuracy -> save model
+
+Better validation loss -> save model
+
