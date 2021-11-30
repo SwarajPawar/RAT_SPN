@@ -79,8 +79,8 @@ def run_training():
     #############
     if ARGS.data_set in ['mnist', 'fashion_mnist']:
         import pandas as pd
-        #train_x, train_labels, valid_x, valid_labels, test_x, test_labels = datasets.load_mnist(ARGS.data_path)
-        
+        train_x, train_labels, valid_x, valid_labels, test_x, test_labels = datasets.load_mnist(ARGS.data_path)
+        '''
         df = pd.read_csv(f"ftrain.tsv", sep='\t', header = None)
         data1 = df.values[:,1:]
         df = pd.read_csv(f"ftest.tsv", sep='\t', header = None)
@@ -91,7 +91,7 @@ def run_training():
 
         test_x = data2[:,1:]
         test_labels = data2[:,0]
-        
+        '''
     elif ARGS.data_set in ['feature_mnist']:
         train_x, train_labels, valid_x, valid_labels, test_x, test_labels = datasets.load_mnist(ARGS.data_path)
         #Get test and train data
